@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building in Public Without the Friction | Thooval</title>
+    <meta name="description"
+        content="Logging weekly founder updates shouldn't take hours. Discover how to streamline your Build in Public routine using minimal, local-first tools.">
+    <meta name="keywords"
+        content="build in public tools, founder updates format, indie hacker blog setup, frictionless writing app, consistent developer logs">
+    <link rel="canonical" href="https://akhil-k-thomas.github.io/thooval/blog/building-in-public-fast-updates.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+        content="https://akhil-k-thomas.github.io/thooval/blog/building-in-public-fast-updates.html">
+    <meta property="og:title" content="Building in Public Without the Friction">
+    <meta property="og:description"
+        content="Discover how to streamline your Build in Public routine using minimal, local-first tools.">
+    <meta property="og:image" content="https://akhil-k-thomas.github.io/thooval/assets/thooval_editor_mockup.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .article-content h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .article-content strong {
+            color: var(--clr-text);
+        }
+
+        .article-header {
+            border-bottom: 1px solid var(--clr-border);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .author-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                    <line x1="16" y1="8" x2="2" y2="22"></line>
+                    <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                </svg>
+                <span>Thooval</span>
+            </a>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="index.html" class="nav-link" style="font-weight: 500; color: var(--clr-text-muted);">More
+                    Articles</a>
+                <a href="https://github.com/akhil-k-thomas/thooval/releases/download/thooval/Thooval_0.1.0_aarch64.dmg"
+                    class="nav-cta">Download App</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px;">
+        <article class="container section-padding" style="max-width: 800px; padding-top: 0;">
+
+            <header class="article-header fade-up">
+                <span
+                    style="font-size: 0.9rem; color: var(--clr-brand); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Workflows</span>
+                <h1 style="margin-top: 1rem; margin-bottom: 1rem; font-size: clamp(2.5rem, 4vw, 3.5rem);">Building in
+                    Public Without the Friction</h1>
+                <p style="font-size: 1.25rem; color: var(--clr-text-muted); max-width: 700px; line-height: 1.6;">Logging
+                    weekly founder updates shouldn't take hours away from coding. How to streamline your updates using
+                    minimal, local-first tools.</p>
+
+                <div class="author-meta">
+                    <div
+                        style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--clr-brand); color: white; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">
+                        A</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--clr-text);">Akhil K Thomas</div>
+                        <div style="font-size: 0.9rem; color: var(--clr-text-muted);">Published March 2, 2026</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="article-content fade-up delay-1">
+                <p>The "Build in Public" movement has transformed how independent software is marketed. By sharing
+                    revenue numbers, technical hurdles, and behind-the-scenes thoughts, founders can build immense trust
+                    and loyalty before their product even launches.</p>
+
+                <p>However, many founders abandon the practice after three weeks. Why? Because the act of writing the
+                    update becomes a chore.</p>
+
+                <h2>The Context Switching Penalty</h2>
+
+                <p>As a developer, your brain is fully loaded with the architecture of your application. When you pause
+                    to write an update, you don't just have to think about English prose instead of code; you have to
+                    physically change your environment.</p>
+
+                <p>You have to log into a web portal, deal with rich-text formatting, upload images to a CMS, and
+                    preview the live page. This level of context-switching destroys your technical momentum. A task that
+                    should take 5 minutes takes 45 minutes.</p>
+
+                <h2>The 5-Minute Update System</h2>
+
+                <p>To consistently log updates without hating the process, you must strip the friction down to zero. The
+                    process should mimic opening a terminal window. </p>
+
+                <ul>
+                    <li><strong>No Browsers:</strong> Never write your updates in a web browser. The temptation to check
+                        analytics or Twitter is too high.</li>
+                    <li><strong>No Formatting:</strong> Write in pure Markdown. Bullet points and bold text should be
+                        achieved through keystrokes, not mouse clicks.</li>
+                    <li><strong>No Complex Publishing:</strong> Don't compile code to publish an update. Use tools that
+                        generate static files instantly.</li>
+                </ul>
+
+                <h2>The Developer's Diary: Thooval</h2>
+
+                <p>We built <a href="../index.html"
+                        style="color: var(--clr-brand); font-weight: 500;">Thooval</a> to be the ultimate
+                    developer's diary. Because it runs natively as a desktop app, opening it takes less than a second.
+                    You can have VS Code open on one monitor, and Thooval open on the other.</p>
+
+                <p>When you solve a tough bug, you `Cmd+Tab` to Thooval, type a 3-sentence markdown note, hit save
+                    (locally), and `Cmd+Tab` right back to your code. At the end of the week, you simply click the
+                    built-in Publish button, and your entire dev-log is built into an elegant static web page.</p>
+
+                <p>Building in public works, but only if you can actually sustain the habit. Stop fighting heavy CMS
+                    tools and start using a local markdown editor that respects your focus.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo" style="text-decoration: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                        <line x1="16" y1="8" x2="2" y2="22"></line>
+                        <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                    </svg>
+                    <span>Thooval</span>
+                </a>
+                <p class="made-in">Crafted with care in Kochi, India.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html" class="social-link" style="margin-right: 1rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <span>Blog Home</span>
+                </a>
+                <a href="https://github.com/akhil-k-thomas/thooval" target="_blank" rel="noopener noreferrer"
+                    class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    <span>GitHub Repo</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

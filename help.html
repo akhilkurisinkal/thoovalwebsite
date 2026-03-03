@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Guide | Thooval</title>
+    <meta name="description"
+        content="Learn how to use Thooval — set up your editor, connect GitHub, publish your blog, enable analytics and comments.">
+    <link rel="canonical" href="https://akhil-k-thomas.github.io/thooval/help.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Help page layout ── */
+        .help-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 0;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Sidebar */
+        .help-sidebar {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            padding: 3rem 1.5rem 3rem 0;
+            border-right: 1px solid var(--clr-border);
+        }
+
+        .help-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .help-sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .help-sidebar::-webkit-scrollbar-thumb {
+            background: var(--clr-border);
+            border-radius: 99px;
+        }
+
+        .sidebar-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--clr-text-muted);
+            margin-bottom: 0.75rem;
+            margin-top: 1.75rem;
+            padding-left: 0.75rem;
+        }
+
+        .sidebar-label:first-child {
+            margin-top: 0;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.45rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            line-height: 1.4;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: var(--clr-brand-light);
+            color: var(--clr-brand);
+        }
+
+        /* Main content */
+        .help-content {
+            padding: 3rem 0 6rem 3.5rem;
+            max-width: 720px;
+        }
+
+        .help-page-title {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .help-page-subtitle {
+            font-size: 1.1rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .help-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+        }
+
+        .help-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .help-section h2 .section-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--clr-brand-light);
+            border-radius: var(--radius-sm);
+            color: var(--clr-brand);
+            flex-shrink: 0;
+        }
+
+        .help-section h3 {
+            font-size: 1.15rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: var(--clr-text);
+        }
+
+        .help-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .help-section ul,
+        .help-section ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-section li {
+            font-size: 1rem;
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 0.35rem;
+        }
+
+        .help-divider {
+            border: none;
+            border-top: 1px solid var(--clr-border);
+            margin: 3.5rem 0;
+        }
+
+        /* Step cards */
+        .step-card {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .step-card:hover {
+            border-color: rgba(99, 91, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(99, 91, 255, 0.06);
+        }
+
+        .step-num {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-brand);
+            opacity: 0.5;
+            min-width: 2rem;
+            line-height: 1;
+            padding-top: 3px;
+        }
+
+        .step-body h4 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--clr-text);
+            margin-bottom: 0.35rem;
+        }
+
+        .step-body p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Callout boxes */
+        .callout {
+            display: flex;
+            gap: 0.9rem;
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-sm);
+            margin: 1.25rem 0;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--clr-text);
+        }
+
+        .callout-tip {
+            background: var(--clr-brand-light);
+            border-left: 3px solid var(--clr-brand);
+        }
+
+        .callout-note {
+            background: #F0FDF4;
+            border-left: 3px solid #22C55E;
+        }
+
+        .callout-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--clr-border);
+            padding: 1.25rem 0;
+        }
+
+        .faq-q {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--clr-text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .faq-q::before {
+            content: 'Q';
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--clr-brand);
+            font-size: 1rem;
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        .faq-a {
+            font-size: 0.975rem;
+            color: var(--clr-text-muted);
+            line-height: 1.75;
+            padding-left: 1.4rem;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .help-layout {
+                grid-template-columns: 1fr;
+                padding: 0 1.25rem;
+            }
+
+            .help-sidebar {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--clr-border);
+                padding: 2rem 0 1.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .sidebar-label {
+                display: none;
+            }
+
+            .sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.35rem;
+            }
+
+            .help-content {
+                padding: 2.5rem 0 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                    <line x1="16" y1="8" x2="2" y2="22"></line>
+                    <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                </svg>
+                <span>Thooval</span>
+            </a>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="blog/index.html" class="nav-link"
+                    style="font-weight: 500; color: var(--clr-text-muted);">Blog</a>
+                <a href="index.html#pricing" class="nav-link"
+                    style="font-weight: 500; color: var(--clr-text-muted);">Pricing</a>
+                <a href="https://github.com/akhil-k-thomas/thooval/releases/download/thooval/Thooval_0.1.0_aarch64.dmg"
+                    class="nav-cta">Download</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <div class="help-layout">
+
+            <!-- Sidebar -->
+            <aside class="help-sidebar">
+                <p class="sidebar-label">Getting Started</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#install">Download & Install</a></li>
+                    <li><a href="#activate">Activate your License</a></li>
+                </ul>
+
+                <p class="sidebar-label">Writing</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#editor">The Editor</a></li>
+                    <li><a href="#posts">Creating Posts</a></li>
+                    <li><a href="#formatting">Formatting</a></li>
+                </ul>
+
+                <p class="sidebar-label">Publishing</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#github">Connect GitHub</a></li>
+                    <li><a href="#pat" style="padding-left: 1.25rem;">↳ Personal Access Token</a></li>
+                    <li><a href="#publish">Publish Your Blog</a></li>
+                </ul>
+
+                <p class="sidebar-label">Extras</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#analytics">Google Analytics</a></li>
+                    <li><a href="#comments">Comments (Giscus)</a></li>
+                </ul>
+
+                <p class="sidebar-label">Support</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <div class="help-content">
+                <h1 class="help-page-title">Help & Guide</h1>
+                <p class="help-page-subtitle">Everything you need to go from blank page to live blog.</p>
+
+                <!-- Install -->
+                <section class="help-section" id="install">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </span>
+                        Download & Install
+                    </h2>
+                    <p>Thooval is a native macOS app for Apple Silicon Macs. Here's how to get it running:</p>
+
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Download the DMG</h4>
+                            <p>Click the Download button on the homepage to grab the latest <code>.dmg</code> file.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Open the installer</h4>
+                            <p>Double-click the <code>.dmg</code> to mount it, then drag <strong>Thooval</strong> into
+                                your Applications folder.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>First launch</h4>
+                            <p>Open Thooval from Applications. If macOS warns about an unverified developer, go to
+                                <strong>System Settings → Privacy & Security</strong> and click <em>Open Anyway</em>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-note">
+                        <span class="callout-icon">✦</span>
+                        <span>Thooval currently supports <strong>Apple Silicon</strong> Macs (M1 and later). Intel
+                            support is planned.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Activate -->
+                <section class="help-section" id="activate">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </span>
+                        Activate your License
+                    </h2>
+                    <p>Thooval gives you a <strong>7-day free trial</strong> with all features unlocked — no credit
+                        card, no account needed. When your trial ends, you'll be prompted to enter a license key.</p>
+
+                    <h3>Buying a license</h3>
+                    <p>A license key costs a one-time fee of <strong>$5</strong>. After purchase you'll receive a key by
+                        email. To activate:</p>
+                    <ol>
+                        <li>Open Thooval and click <strong>Activate License</strong> when prompted.</li>
+                        <li>Paste your license key into the field and press <strong>Activate</strong>.</li>
+                        <li>Done — Thooval is now yours forever.</li>
+                    </ol>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-icon">💡</span>
+                        <span>Your license is tied to your purchase email, not a specific device. You can use it on any
+                            Mac you own.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Editor -->
+                <section class="help-section" id="editor">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                            </svg>
+                        </span>
+                        The Editor
+                    </h2>
+                    <p>Thooval uses a <strong>WYSIWYG editor</strong> — what you see while writing is exactly what your
+                        readers will see on your blog. There's no raw Markdown syntax cluttering the screen.</p>
+                    <p>Under the hood, every post is stored as a plain <code>.md</code> (Markdown) file in a folder you
+                        choose on your Mac. You own the files — not us.</p>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-icon">💡</span>
+                        <span>Because your posts are plain Markdown files, you can open and edit them in any text editor
+                            — VS Code, Obsidian, iA Writer — at any time.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Posts -->
+                <section class="help-section" id="posts">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </span>
+                        Creating Posts
+                    </h2>
+                    <p>To write a new blog post:</p>
+                    <ol>
+                        <li>Click <strong>New Post</strong> in the sidebar.</li>
+                        <li>Give your post a title — this becomes the headline on your blog.</li>
+                        <li>Write your content in the editor. Changes save automatically.</li>
+                        <li>When you're happy, mark the post as <strong>Published</strong> and hit the Publish button to
+                            push it live.</li>
+                    </ol>
+                    <p>Draft posts are saved locally but won't appear on your live blog until you publish.</p>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Formatting -->
+                <section class="help-section" id="formatting">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 7V4h16v3"></path>
+                                <path d="M9 20h6"></path>
+                                <path d="M12 4v16"></path>
+                            </svg>
+                        </span>
+                        Formatting
+                    </h2>
+                    <p>The editor supports all standard formatting via toolbar buttons or keyboard shortcuts:</p>
+                    <ul>
+                        <li><strong>Bold</strong> — <code>⌘B</code></li>
+                        <li><em>Italic</em> — <code>⌘I</code></li>
+                        <li>Headings — <code>H1</code>, <code>H2</code>, <code>H3</code> from the toolbar</li>
+                        <li>Links — select text, press <code>⌘K</code>, paste your URL</li>
+                        <li>Bullet & numbered lists — toolbar or <code>-</code> / <code>1.</code> at the start of a line
+                        </li>
+                        <li>Block quotes, code blocks, and horizontal rules via the toolbar</li>
+                        <li>Images — drag and drop into the editor</li>
+                    </ul>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- GitHub -->
+                <section class="help-section" id="github">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </span>
+                        Connect GitHub
+                    </h2>
+                    <p>Thooval publishes your blog to <strong>GitHub Pages</strong> — a free hosting service from
+                        GitHub. You need a free GitHub account and a <strong>Personal Access Token</strong> to connect.
+                    </p>
+
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Create a GitHub account</h4>
+                            <p>If you don't have one, sign up for free at <a href="https://github.com" target="_blank"
+                                    rel="noopener" style="color:var(--clr-brand);">github.com</a>. It takes under a
+                                minute.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Generate a Personal Access Token</h4>
+                            <p>Thooval uses a GitHub PAT to push your blog on your behalf. Follow the guide below to
+                                create one.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>Paste the token into Thooval</h4>
+                            <p>Go to <strong>Settings → Publishing</strong>, paste your token, and save. Thooval will
+                                verify it and connect to your account.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>Choose or create a repository</h4>
+                            <p>Pick an existing repo or let Thooval create a new one. Your blog will be published to
+                                <code>your-username.github.io/repo-name</code>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-note">
+                        <span class="callout-icon">✦</span>
+                        <span>GitHub Pages hosting is <strong>completely free</strong> for public repositories. You
+                            never pay for hosting.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Personal Access Token -->
+                <section class="help-section" id="pat">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                                </path>
+                            </svg>
+                        </span>
+                        Generate a Personal Access Token
+                    </h2>
+                    <p>A <strong>Personal Access Token (PAT)</strong> is like a password that lets Thooval push files to
+                        your GitHub repository on your behalf — safely and without ever seeing your GitHub password.</p>
+
+                    <h3>Step 1 — Open GitHub Token Settings</h3>
+                    <p>While logged in to GitHub, navigate to:</p>
+                    <p><strong>Profile photo (top-right) → Settings → Developer settings → Personal access tokens →
+                            Tokens (classic)</strong></p>
+                    <p>Or go directly: <a href="https://github.com/settings/tokens" target="_blank" rel="noopener"
+                            style="color:var(--clr-brand);">github.com/settings/tokens</a></p>
+
+                    <h3>Step 2 — Generate a new token</h3>
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Click "Generate new token" → "Generate new token (classic)"</h4>
+                            <p>The classic token gives Thooval the specific permissions it needs.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Add a note</h4>
+                            <p>Give it a descriptive name like <code>Thooval Publishing</code> so you know what it's for
+                                later.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>Set expiration</h4>
+                            <p>Choose <strong>No expiration</strong> so you don't have to regenerate it periodically. If
+                                you prefer a time limit, 1 year is a good balance.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>Select the required scopes</h4>
+                            <p>Tick the following checkboxes — nothing more, nothing less:</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li><code>repo</code> — Full control of private/public repositories (needed to push your
+                                    blog files)</li>
+                                <li><code>workflow</code> — Required if you use GitHub Actions to deploy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h4>Click "Generate token"</h4>
+                            <p>GitHub will show your token <strong>once</strong>. Copy it immediately — you won't be
+                                able to see it again.</p>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-icon">💡</span>
+                        <span>Treat your token like a password. Don't share it or commit it to a repository. If it's
+                            ever exposed, go to GitHub → Settings → Developer settings → Tokens and delete it, then
+                            generate a new one.</span>
+                    </div>
+
+                    <h3>Step 3 — Paste it into Thooval</h3>
+                    <ol>
+                        <li>Open Thooval and go to <strong>Settings → Publishing</strong>.</li>
+                        <li>Paste your token into the <strong>GitHub Token</strong> field.</li>
+                        <li>Click <strong>Save</strong>. Thooval will verify it and show your GitHub username confirming
+                            the connection.</li>
+                    </ol>
+
+                    <div class="callout callout-note">
+                        <span class="callout-icon">✦</span>
+                        <span>Your token is stored securely in macOS <strong>Keychain</strong> — not in a plain text
+                            file. Thooval never sends it to any server other than GitHub's own API.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Publish -->
+                <section class="help-section" id="publish">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </span>
+                        Publish Your Blog
+                    </h2>
+                    <p>Once GitHub is connected, publishing is a single click:</p>
+                    <ol>
+                        <li>Click the <strong>Publish</strong> button in the top toolbar.</li>
+                        <li>Thooval builds a static HTML site from your Markdown posts.</li>
+                        <li>The built site is pushed to your GitHub repository automatically.</li>
+                        <li>Your blog is live within seconds at your GitHub Pages URL.</li>
+                    </ol>
+                    <p>Only posts marked as <strong>Published</strong> appear on the live site. Drafts stay private on
+                        your Mac.</p>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-icon">💡</span>
+                        <span>Want a custom domain like <code>yourblog.com</code>? You can point any domain to GitHub
+                            Pages — Thooval doesn't lock you into a subdomain.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Analytics -->
+                <section class="help-section" id="analytics">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </span>
+                        Google Analytics
+                    </h2>
+                    <p>Track your visitors and see which posts get the most reads — without leaving Thooval.</p>
+
+                    <h3>Step 1 — Get your Measurement ID</h3>
+                    <ol>
+                        <li>Go to <a href="https://analytics.google.com" target="_blank" rel="noopener"
+                                style="color: var(--clr-brand);">analytics.google.com</a> and sign in.</li>
+                        <li>Create a new property for your blog's URL.</li>
+                        <li>Under <strong>Data Streams</strong>, select your Web stream.</li>
+                        <li>Copy your <strong>Measurement ID</strong> — it looks like <code>G-XXXXXXXXXX</code>.</li>
+                    </ol>
+
+                    <h3>Step 2 — Add it to Thooval</h3>
+                    <ol>
+                        <li>In Thooval, go to <strong>Settings → Analytics</strong>.</li>
+                        <li>Paste your Measurement ID and save.</li>
+                        <li>Click <strong>Publish</strong> — Thooval will embed the GA tag in every page automatically.
+                        </li>
+                    </ol>
+
+                    <div class="callout callout-note">
+                        <span class="callout-icon">✦</span>
+                        <span>It can take up to 48 hours for data to appear in your Google Analytics dashboard after the
+                            first publish.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- Comments -->
+                <section class="help-section" id="comments">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        Comments via Giscus
+                    </h2>
+                    <p>Let readers leave comments on your blog posts — powered by <strong>GitHub Discussions</strong>.
+                        It's free, spam-resistant, and readers only need a GitHub login.</p>
+
+                    <h3>Step 1 — Set up Giscus</h3>
+                    <ol>
+                        <li>Make sure your blog's GitHub repository is <strong>public</strong>.</li>
+                        <li>Go to <a href="https://github.com/apps/giscus" target="_blank" rel="noopener"
+                                style="color:var(--clr-brand);">github.com/apps/giscus</a> and install the Giscus app on
+                            your repo.</li>
+                        <li>Enable <strong>Discussions</strong> on your repo: go to your repo → Settings → scroll to
+                            Features → tick Discussions.</li>
+                        <li>Visit <a href="https://giscus.app" target="_blank" rel="noopener"
+                                style="color:var(--clr-brand);">giscus.app</a>, enter your repo details, choose a
+                            Discussion category, and copy the <strong>Repo ID</strong> and <strong>Category ID</strong>.
+                        </li>
+                    </ol>
+
+                    <h3>Step 2 — Enable in Thooval</h3>
+                    <ol>
+                        <li>Go to <strong>Settings → Comments</strong> in Thooval.</li>
+                        <li>Toggle <strong>Enable Giscus comments</strong>.</li>
+                        <li>Paste in your Repo ID and Category ID, then save.</li>
+                        <li>Hit <strong>Publish</strong> — a comments section will appear at the bottom of every post.
+                        </li>
+                    </ol>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-icon">💡</span>
+                        <span>All comments are stored as GitHub Discussions in your repo — you can moderate them
+                            directly from GitHub.</span>
+                    </div>
+                </section>
+
+                <hr class="help-divider">
+
+                <!-- FAQ -->
+                <section class="help-section" id="faq">
+                    <h2>
+                        <span class="section-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </span>
+                        FAQ
+                    </h2>
+
+                    <div class="faq-item">
+                        <p class="faq-q">Do I need to know Markdown to use Thooval?</p>
+                        <p class="faq-a">No. The WYSIWYG editor means you never see raw Markdown — just format using the
+                            toolbar. But if you prefer typing Markdown, you can, and it'll render live.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-q">Where are my files stored?</p>
+                        <p class="faq-a">On your Mac, in a folder you choose. Every post is a plain <code>.md</code>
+                            file. Nothing is sent to our servers.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-q">What happens to my blog if I stop using Thooval?</p>
+                        <p class="faq-a">Nothing bad. Your Markdown files stay on your Mac, and your blog stays live on
+                            GitHub Pages. You can always publish manually or switch tools — the files are yours.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-q">Is there a monthly fee?</p>
+                        <p class="faq-a">No. Thooval is a one-time $5 purchase. No subscriptions, no renewals, no
+                            surprises. GitHub Pages hosting is also free.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-q">Can I use a custom domain for my blog?</p>
+                        <p class="faq-a">Yes. GitHub Pages supports custom domains. Point your domain's DNS to GitHub's
+                            servers and configure it in your repo settings — Thooval will detect it automatically on the
+                            next publish.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-q">I lost my license key. What do I do?</p>
+                        <p class="faq-a">Check the email you used to purchase — the key is in your receipt. If you can't
+                            find it, reach out via the GitHub repo and we'll help.</p>
+                    </div>
+                </section>
+
+            </div><!-- /help-content -->
+        </div><!-- /help-layout -->
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                        <line x1="16" y1="8" x2="2" y2="22"></line>
+                        <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                    </svg>
+                    <span>Thooval</span>
+                </div>
+                <p class="made-in">Crafted with love from <a href="https://www.keralatourism.org/" target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">God's Own
+                        Country</a>.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html" class="social-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="blog/index.html" class="social-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <span>Blog</span>
+                </a>
+                <a href="mailto:support@thooval.ink?subject=Thooval%20Support%20Request" class="social-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Highlight active sidebar link on scroll
+        const sections = document.querySelectorAll('.help-section');
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    const active = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
