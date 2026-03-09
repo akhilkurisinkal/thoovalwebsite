@@ -8,31 +8,30 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-JKP840CDJS');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thooval | Your words, owned by you</title>
+    <title>Thooval — The simplest way to run a personal blog</title>
     <meta name="description"
-        content="Write beautiful posts on your Mac, publish your blog in one click, and own everything forever. Thooval is a WYSIWYG blog editor — no cloud, no subscriptions, just $5 once.">
+        content="Write locally, publish to GitHub Pages in one click. No servers, no databases, no subscriptions. Your blog is just files. Thooval is $19 once.">
     <meta name="keywords"
-        content="local first writing app, minimalist markdown editor mac, private writing software, distraction free writer, static blog generator">
-    <link rel="canonical" href="https://akhil-k-thomas.github.io/thooval/">
+        content="developer blog tool, local first blogging, github pages publisher, markdown blog generator, indie hacker blog, static blog mac app">
+    <link rel="canonical" href="https://thooval.ink/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akhil-k-thomas.github.io/thooval/">
-    <meta property="og:title" content="Thooval | Your words, owned by you">
+    <meta property="og:url" content="https://thooval.ink/">
+    <meta property="og:title" content="Thooval — The simplest way to run a personal blog">
     <meta property="og:description"
-        content="Write on your Mac, publish to the world in one click. No cloud. No monthly bills. Yours forever for $5.">
+        content="Write locally, publish in one click. No servers, no databases, no subscriptions. Your blog is just files.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://akhil-k-thomas.github.io/thooval/">
-    <meta property="twitter:title" content="Thooval | Your words, owned by you">
+    <meta property="twitter:url" content="https://thooval.ink/">
+    <meta property="twitter:title" content="Thooval — The simplest way to run a personal blog">
     <meta property="twitter:description"
-        content="Write on your Mac, publish to the world in one click. No cloud. No monthly bills. Yours forever for $5.">
+        content="Write locally, publish in one click. No servers, no databases, no subscriptions.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,10 +50,10 @@
       "applicationCategory": "TextEditor",
       "offers": {
         "@type": "Offer",
-        "price": "5",
+        "price": "19",
         "priceCurrency": "USD"
       },
-      "description": "Thooval is a WYSIWYG blog editor for Mac. Write distraction-free, publish to GitHub Pages in one click, and own your blog forever — no cloud, no subscriptions.",
+      "description": "Thooval is a desktop blogging app for Mac. Write locally, publish to GitHub Pages in one click. No servers, no databases, no subscriptions.",
       "author": {
         "@type": "Person",
         "name": "Akhil K Thomas"
@@ -90,115 +89,434 @@
         <!-- Hero Section -->
         <section class="hero section-padding">
             <div class="container hero-container fade-up">
-                <span class="badge" style="margin-bottom: 2rem;">No monthly paywalls</span>
-                <h1 class="hero-title">Your words,<br class="desktop-only">owned by you.</h1>
-                <p class="hero-subtitle">Write beautiful posts on your Mac. Publish your blog in one click. Own your
-                    words forever — no cloud, no monthly bills.</p>
+                <span class="badge" style="margin-bottom: 2rem;">For developers &amp; indie hackers</span>
+                <h1 class="hero-title">The simplest way<br class="desktop-only"> to run a personal blog.</h1>
+                <p class="hero-subtitle">Write locally. Click publish. Your blog updates online. No servers, no
+                    databases, no monthly bills.</p>
                 <div class="hero-actions">
                     <a href="https://github.com/akhil-k-thomas/thooval/releases/download/thooval/Thooval_0.1.0_aarch64.dmg"
-                        class="button primary-button">
+                        class="button primary-button" id="hero-download-btn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
-                        Download for macOS (Apple Silicon)
+                        Download for macOS
+                    </a>
+                    <a href="#pricing" class="button secondary-button" id="hero-pricing-btn">
+                        $19 once, yours forever →
                     </a>
                 </div>
+                <p class="hero-disclaimer">Apple Silicon Mac required.</p>
             </div>
             <div class="hero-mockup-wrapper fade-up delay-1">
-                <img src="assets/thooval_editor_mockup.png" alt="Thooval App UI Minimalist Editor" class="app-mockup"
-                    id="hero-mockup-image">
+                <img src="assets/thooval_editor_mockup.png" alt="Thooval App UI — Minimalist Blog Editor"
+                    class="app-mockup" id="hero-mockup-image">
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section class="problem-section section-padding bg-light">
-            <div class="container fade-up">
-                <h2 class="section-title">Escape the noise.</h2>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <div class="cross-icon">✕</div>
-                        <h3>Bloated CMS Platforms</h3>
-                        <p>Endless plugins, constant updates, slow dashboards, and cluttered menus that pull you away
-                            from what matters: writing.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="cross-icon">✕</div>
-                        <h3>Cloud-Owned Data</h3>
-                        <p>Your work stuck on someone else's server, vulnerable to subscription hikes, server outages,
-                            or sudden platform shutdowns.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="cross-icon">✕</div>
-                        <h3>Subscription Fatigue</h3>
-                        <p>Tired of paying monthly for tools you use every day? No monthly paywalls here. Thooval is
-                            yours forever.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How it Works Section -->
-        <section class="how-section section-padding" id="how-it-works">
+        <!-- Workflow Comparison Section -->
+        <section class="workflow-section section-padding bg-light" id="workflow">
             <div class="container">
-                <div class="how-header fade-up">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Dead Simple</span>
-                    <h2 class="section-title">How it works</h2>
-                    <p class="how-subtext">From blank page to live blog in three steps.</p>
+                <div class="workflow-header fade-up">
+                    <span class="badge" style="margin-bottom: 1.5rem;">Blogging made simple</span>
+                    <h2 class="section-title">Stop fighting your tools.</h2>
+                    <p class="workflow-subtext">The traditional developer blog workflow has too many moving parts.
+                        Thooval removes all of them.</p>
                 </div>
-                <div class="how-steps">
-                    <div class="how-step fade-up">
-                        <div class="step-number">01</div>
-                        <div class="step-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 20h9"></path>
-                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                            </svg>
+                <div class="workflow-compare fade-up delay-1">
+                    <div class="workflow-col workflow-old">
+                        <div class="workflow-col-label workflow-label-bad">The old way</div>
+                        <div class="workflow-steps-list">
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">1</span>
+                                <span>Write your post</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">2</span>
+                                <span>Run the build command</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">3</span>
+                                <span>Fix the build error</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">4</span>
+                                <span>Commit your changes</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">5</span>
+                                <span>Push to Git</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">6</span>
+                                <span>Wait for CI to deploy</span>
+                            </div>
+                            <div class="workflow-arrow">↓</div>
+                            <div class="workflow-step-item workflow-step-bad">
+                                <span class="workflow-step-num">7</span>
+                                <span>Check if it deployed correctly</span>
+                            </div>
                         </div>
-                        <h3>Write in the editor</h3>
-                        <p>Thooval's WYSIWYG editor shows your writing exactly as it'll appear — bold is bold, headings
-                            look like headings. Under the hood, everything saves as plain <code>.md</code> files on your
-                            Mac. Your words, your files, fully offline.</p>
                     </div>
-                    <div class="how-connector"></div>
-                    <div class="how-step fade-up delay-1">
-                        <div class="step-number">02</div>
-                        <div class="step-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="workflow-divider">
+                        <div class="workflow-vs">vs</div>
+                    </div>
+                    <div class="workflow-col workflow-new">
+                        <div class="workflow-col-label workflow-label-good">With Thooval</div>
+                        <div class="workflow-steps-list">
+                            <div class="workflow-step-item workflow-step-good">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Write your post</span>
+                            </div>
+                            <div class="workflow-arrow workflow-arrow-good">↓</div>
+                            <div class="workflow-step-item workflow-step-good">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Click <strong>Publish</strong></span>
+                            </div>
+                            <div class="workflow-arrow workflow-arrow-good">↓</div>
+                            <div class="workflow-step-item workflow-step-good workflow-step-final">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Blog is live ✓</span>
+                            </div>
+                        </div>
+                        <p class="workflow-tagline">That's it. Really.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Thooval Section -->
+        <section class="why-section section-padding" id="why">
+            <div class="container">
+                <div class="why-header fade-up" style="text-align: center;">
+                    <span class="badge" style="margin-bottom: 1.5rem;">Why Thooval</span>
+                    <h2 class="section-title">Your blog is just files.</h2>
+                    <p class="why-subtext">Thooval is built around one idea: your blog should be simple. No
+                        infrastructure to manage. No platform to depend on. Just you, your words, and a publish button.
+                    </p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card fade-up">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
                                 </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>Connect your GitHub</h3>
-                        <p>Link your free GitHub account once. Thooval uses it to host your blog — no servers to rent,
-                            no hosting bills. GitHub Pages serves your site to the world for free.</p>
+                        <h3>Local-first</h3>
+                        <p>Posts are saved as <code>.md</code> files on your Mac. Nothing is stored online until you
+                            choose to publish. You stay in control.</p>
                     </div>
-                    <div class="how-connector"></div>
-                    <div class="how-step fade-up delay-2">
-                        <div class="step-number">03</div>
-                        <div class="step-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="why-card fade-up delay-1">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Write like you think</h3>
+                        <p>Thooval's editor shows your writing formatted as you type — no raw Markdown syntax. Bold is
+                            bold. Headings look like headings. Similar to Typora.</p>
+                    </div>
+                    <div class="why-card fade-up delay-2">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                             </svg>
                         </div>
                         <h3>One-click publish</h3>
-                        <p>Hit Publish. Thooval builds a clean, fast static blog from your writing and pushes it live
-                            instantly. Your readers get a beautiful site — you get zero maintenance.</p>
+                        <p>Hit publish. Thooval generates clean HTML pages and pushes your blog live to GitHub Pages. No
+                            commands, no config files.</p>
+                    </div>
+                    <div class="why-card fade-up">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                            </svg>
+                        </div>
+                        <h3>No servers or databases</h3>
+                        <p>Your blog is a set of HTML files. GitHub hosts them for free. There is no server to maintain,
+                            no database to worry about.</p>
+                    </div>
+                    <div class="why-card fade-up delay-1">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>You own everything</h3>
+                        <p>Your files are yours. Switch tools anytime. Export anytime. If Thooval ever goes away, your
+                            blog and all your posts remain on your computer.</p>
+                    </div>
+                    <div class="why-card fade-up delay-2">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                        </div>
+                        <h3>Pay once</h3>
+                        <p>$19. That's it. No monthly plan, no seat fees, no renewal emails. You buy it once and it's
+                            yours to keep forever.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Three Pillars Section -->
-        <section class="features-section section-padding bg-light">
+        <!-- GitHub Publishing Section -->
+        <section class="publish-section section-padding bg-light" id="publishing">
             <div class="container">
+                <div class="publish-inner fade-up">
+                    <div class="publish-text">
+                        <span class="badge" style="margin-bottom: 1.5rem;">One-click publishing</span>
+                        <h2 class="section-title">Connect once. Publish forever.</h2>
+                        <p>Link your GitHub account once using a personal access token. That's the only setup step.</p>
+                        <p style="margin-top: 1rem;">After that, clicking <strong>Publish</strong> in Thooval builds
+                            your static blog and pushes it directly to GitHub Pages. Your readers get a fully working,
+                            fast website — hosted for free by GitHub.</p>
+                        <div class="publish-steps">
+                            <div class="publish-step">
+                                <div class="publish-step-num">1</div>
+                                <div>
+                                    <strong>Create a GitHub repo</strong>
+                                    <p>Make a new repository for your blog. One time only.</p>
+                                </div>
+                            </div>
+                            <div class="publish-step">
+                                <div class="publish-step-num">2</div>
+                                <div>
+                                    <strong>Paste your access token</strong>
+                                    <p>Thooval uses it to push to your repo. You control the token.</p>
+                                </div>
+                            </div>
+                            <div class="publish-step">
+                                <div class="publish-step-num">3</div>
+                                <div>
+                                    <strong>Click Publish</strong>
+                                    <p>Every time you want to update your blog. One click.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publish-callout">
+                        <div class="callout-card">
+                            <div class="callout-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>GitHub Pages is free</h3>
+                            <p>GitHub hosts static sites at no cost. Thooval just does the building and pushing for you.
+                            </p>
+                            <div class="callout-divider"></div>
+                            <div class="callout-fact">
+                                <strong>No hosting bill.</strong> Ever.
+                            </div>
+                            <div class="callout-fact">
+                                <strong>No server to rent.</strong> None needed.
+                            </div>
+                            <div class="callout-fact">
+                                <strong>No build pipeline.</strong> Thooval handles it.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ownership / Local-First Section -->
+        <section class="ownership-section section-padding" id="ownership">
+            <div class="container">
+                <div class="ownership-inner fade-up">
+                    <div class="ownership-text">
+                        <span class="badge" style="margin-bottom: 1.5rem;">Complete ownership</span>
+                        <h2 class="section-title">"Your blog<br>is just files."</h2>
+                        <p>Every post you write in Thooval is saved as a plain <code>.md</code> file on your computer.
+                            Open them in any text editor. Move them anywhere. Back them up however you like.</p>
+                        <p style="margin-top: 1rem;">There is no Thooval account. There is no cloud storage. Your
+                            content doesn't live on someone else's server. It lives on your Mac, the way it should.</p>
+                    </div>
+                    <div class="ownership-facts">
+                        <div class="ownership-fact">
+                            <div class="fact-icon fact-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Works offline</strong>
+                                <p>Write without an internet connection. Publish when you're ready.</p>
+                            </div>
+                        </div>
+                        <div class="ownership-fact">
+                            <div class="fact-icon fact-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Drag and drop images</strong>
+                                <p>Add images to your posts by dragging them in. They stay local with your files.</p>
+                            </div>
+                        </div>
+                        <div class="ownership-fact">
+                            <div class="fact-icon fact-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>No account required</strong>
+                                <p>Download, install, and start writing. No sign-up form.</p>
+                            </div>
+                        </div>
+                        <div class="ownership-fact">
+                            <div class="fact-icon fact-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Your data is yours, always</strong>
+                                <p>If you ever stop using Thooval, your posts are still on your Mac, unchanged.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- No Servers Section -->
+        <section class="noserver-section section-padding bg-light" id="no-servers">
+            <div class="container fade-up" style="text-align: center;">
+                <span class="badge" style="margin-bottom: 1.5rem;">Zero infrastructure</span>
+                <h2 class="section-title">No servers. No databases.<br class="desktop-only">No maintenance.</h2>
+                <p class="noserver-subtext">A static blog is just HTML files. GitHub serves them to your readers
+                    instantly — for free. You never have to think about uptime, backups, or hosting costs.</p>
+                <div class="noserver-grid">
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No web server to manage</span>
+                    </div>
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No database to maintain</span>
+                    </div>
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No hosting bill</span>
+                    </div>
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No deployment pipeline</span>
+                    </div>
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No cloud vendor lock-in</span>
+                    </div>
+                    <div class="noserver-item">
+                        <div class="noserver-x">✕</div>
+                        <span>No subscription fees</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For Section -->
+        <section class="for-section section-padding" id="who">
+            <div class="container">
+                <div class="for-header fade-up" style="text-align: center;">
+                    <span class="badge" style="margin-bottom: 1.5rem;">Who it's for</span>
+                    <h2 class="section-title">Built around a simple<br class="desktop-only">blogging workflow.</h2>
+                    <p class="for-subtext">Thooval is designed for people who want to write and publish — without the
+                        setup.</p>
+                </div>
+                <div class="for-cards">
+                    <div class="for-card fade-up">
+                        <div class="for-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Developers</h3>
+                        <p>You want a personal blog but don't want to spend a weekend setting up a framework. You know
+                            Git. You just want it to work.</p>
+                    </div>
+                    <div class="for-card fade-up delay-1">
+                        <div class="for-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Indie hackers</h3>
+                        <p>You're building something and want to write about it publicly. You prefer tools you own over
+                            platforms that change their rules.</p>
+                    </div>
+                    <div class="for-card fade-up delay-2">
+                        <div class="for-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>File-first thinkers</h3>
+                        <p>You like owning your writing as plain files. You've been burned by platforms that disappeared
+                            or changed. You want your data on your machine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Summary Section -->
+        <section class="features-section section-padding bg-light" id="features">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;" class="fade-up">
+                    <span class="badge" style="margin-bottom: 1.5rem;">Everything included</span>
+                    <h2 class="section-title">Everything you need.<br class="desktop-only">Nothing you don't.</h2>
+                </div>
                 <div class="features-grid">
                     <div class="feature-card fade-up">
                         <div class="feature-icon">
@@ -211,9 +529,8 @@
                                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>Local-First</h3>
-                        <p>Your files stay safely on your Mac. No remote databases, no forced cloud sync. True privacy
-                            and control.</p>
+                        <h3>Local-first writing</h3>
+                        <p>Posts save as <code>.md</code> files on your Mac. No internet required to write.</p>
                     </div>
                     <div class="feature-card fade-up delay-1">
                         <div class="feature-icon">
@@ -223,9 +540,8 @@
                                 <line x1="9" y1="3" x2="9" y2="21"></line>
                             </svg>
                         </div>
-                        <h3>WYSIWYG Editor</h3>
-                        <p>See your writing as it'll look — no raw syntax. Bold, headings, and links render live. Saved
-                            as plain <code>.md</code> files on your Mac.</p>
+                        <h3>Live-formatted editor</h3>
+                        <p>See your writing as it'll appear. No raw Markdown syntax while you type.</p>
                     </div>
                     <div class="feature-card fade-up delay-2">
                         <div class="feature-icon">
@@ -235,11 +551,21 @@
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                             </svg>
                         </div>
-                        <h3>One-Click Publish</h3>
-                        <p>Build and push your beautiful static blog to the web in seconds. Zero deployment headaches.
-                        </p>
+                        <h3>One-click GitHub Pages publish</h3>
+                        <p>Thooval builds your static site and deploys it. One button.</p>
                     </div>
                     <div class="feature-card fade-up">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <path d="M3 9h18M9 21V9"></path>
+                            </svg>
+                        </div>
+                        <h3>Drag and drop images</h3>
+                        <p>Drop an image into your post. It's embedded automatically.</p>
+                    </div>
+                    <div class="feature-card fade-up delay-1">
                         <div class="feature-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -248,11 +574,10 @@
                                 <line x1="6" y1="20" x2="6" y2="14"></line>
                             </svg>
                         </div>
-                        <h3>Google Analytics</h3>
-                        <p>Paste in your GA measurement ID and get instant visitor insights. Know which posts resonate —
-                            without leaving your app.</p>
+                        <h3>Google Analytics built in</h3>
+                        <p>Paste your measurement ID. Visitor data appears in your Google dashboard automatically.</p>
                     </div>
-                    <div class="feature-card fade-up delay-1">
+                    <div class="feature-card fade-up delay-2">
                         <div class="feature-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -260,27 +585,8 @@
                             </svg>
                         </div>
                         <h3>Comments via Giscus</h3>
-                        <p>Turn on blog comments powered by GitHub Discussions. No third-party accounts for your readers
-                            — just a GitHub login they likely already have.</p>
-                    </div>
-                    <div class="feature-card fade-up delay-2">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                            </svg>
-                        </div>
-                        <h3>Dark/Light Mode</h3>
-                        <p>Writing late into the night? Instantly switch between the clean light UI and a beautiful,
-                            high-contrast dark theme anytime.</p>
+                        <p>Enable comments powered by GitHub Discussions. Readers log in with GitHub — no spam, no ads.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -296,29 +602,21 @@
                 </div>
                 <div class="pricing-card-wrapper">
                     <div class="pricing-card">
-                        <div class="pricing-trial-badge">Try free for 7 days — all features included</div>
                         <div class="pricing-plan-name">Lifetime</div>
                         <div class="pricing-amount">
                             <span class="pricing-currency">$</span>
-                            <span class="pricing-price">5</span>
+                            <span class="pricing-price">19</span>
                             <span class="pricing-period">one-time</span>
                         </div>
-                        <p class="pricing-description">Try it for free with all features for 7 days. When you're ready,
-                            grab a license key and own it forever.</p>
+                        <p class="pricing-description">One payment. Use it for life. No renewals, no seat fees, no
+                            surprises.</p>
                         <ul class="pricing-features">
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>7-day free trial, no card needed</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Pay $5 once — use it for life, no bills ever again</span>
+                                <span>Pay $19 once — use it for life</span>
                             </li>
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -332,7 +630,7 @@
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>Local-first — your data stays on your Mac</span>
+                                <span>Local-first — your data never leaves your Mac</span>
                             </li>
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -348,12 +646,9 @@
                                 <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                                 <line x1="1" y1="10" x2="23" y2="10"></line>
                             </svg>
-                            Buy License Key — $5
+                            Buy License Key — $19
                         </a>
-                        <a href="https://github.com/akhil-k-thomas/thooval/releases/download/thooval/Thooval_0.1.0_aarch64.dmg"
-                            class="pricing-trial-link" id="pricing-trial-btn">
-                            Try it for free with all features for 7 days →
-                        </a>
+
                     </div>
                     <div class="pricing-trust">
                         <div class="trust-item">
@@ -385,19 +680,26 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- Final CTA Section -->
         <section class="cta-section section-padding bg-light">
             <div class="container fade-up">
                 <div class="cta-card">
-                    <h2 class="section-title">Ready to own your words?</h2>
-                    <p class="cta-description">Join writers who choose privacy and focus over subscriptions. Try Thooval
-                        free for 7 days — no credit card needed.</p>
+                    <h2 class="section-title">Start your blog today.</h2>
+                    <p class="cta-description">Download Thooval, write your first post, and publish it — all in under
+                        ten minutes. No hosting setup. No subscriptions. Just your words online.</p>
                     <div class="cta-actions">
                         <a href="https://github.com/akhil-k-thomas/thooval/releases/download/thooval/Thooval_0.1.0_aarch64.dmg"
-                            class="button primary-button">
+                            class="button primary-button" id="cta-download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
                             Download for macOS
                         </a>
                     </div>
+                    <p class="cta-footnote">Apple Silicon Mac required. $19 — pay once, own it forever.</p>
                 </div>
             </div>
         </section>
@@ -411,11 +713,13 @@
                 <p class="cta-description" style="max-width: 500px; margin: 0 auto 2rem; color: var(--clr-text-muted);">
                     Have questions, need help setting up, or found a bug? We're here to help.</p>
                 <a href="mailto:support@thooval.ink?subject=Thooval%20Support%20Request" class="button"
-                    style="background: white; border: 1px solid var(--clr-border); color: var(--clr-text); font-weight: 500;">
+                    style="background: white; border: 1px solid var(--clr-border); color: var(--clr-text); font-weight: 500;"
+                    id="contact-email-btn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round"
                         style="margin-right: 8px; margin-top: -2px; vertical-align: middle;">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                        </path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                     support@thooval.ink
@@ -453,7 +757,8 @@
                 <a href="mailto:support@thooval.ink?subject=Thooval%20Support%20Request" class="social-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                        </path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                     <span>Contact</span>
