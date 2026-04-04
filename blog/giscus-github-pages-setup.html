@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Add Giscus Comments to a GitHub Pages Blog | Thooval Blog</title>
+  <meta name="description" content="A step-by-step guide to adding Giscus comments to a GitHub Pages blog using GitHub Discussions. Includes the easy route and the manual route — and when to use each.">
+  <meta name="keywords" content="giscus github pages setup, add giscus to github pages, giscus comments tutorial, github discussions comments static site, giscus setup guide">
+  <link rel="canonical" href="https://thooval.ink/blog/giscus-github-pages-setup.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .article-content h2{font-size:1.9rem;margin-top:3rem;margin-bottom:1rem;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1A1F36;letter-spacing:-.02em;}
+    .article-content h3{font-size:1.35rem;margin-top:1.75rem;margin-bottom:.65rem;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1A1F36;}
+    .article-content p{margin-bottom:1.5rem;font-size:1.1rem;color:#4F566B;line-height:1.8;}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:1.5rem;}
+    .article-content li{margin-bottom:.5rem;font-size:1.1rem;color:#4F566B;line-height:1.7;}
+    .article-content strong{color:#1A1F36;}
+    .article-header{border-bottom:1px solid #E3E8EE;padding-bottom:2rem;margin-bottom:3rem;}
+    .author-meta{display:flex;align-items:center;gap:1rem;margin-top:2rem;}
+    .step-box{background:#F6F9FC;border:1px solid #E3E8EE;border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+    .step-box h3{font-size:1.05rem;margin-bottom:.5rem;color:#1A1F36;font-family:'Inter',sans-serif;font-weight:600;}
+    .step-box p{font-size:.95rem;margin:0;color:#4F566B;}
+    .step-num-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#635BFF;color:#fff;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:.75rem;}
+    .inline-cta{background:linear-gradient(135deg,#0E9E6E,#059669);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:3rem 0;}
+    .inline-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#fff;margin-bottom:.75rem;}
+    .inline-cta p{color:rgba(255,255,255,.9);font-size:1rem;margin-bottom:1.5rem;}
+    .inline-cta a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#0E9E6E;font-weight:700;font-size:1rem;padding:.8rem 1.75rem;border-radius:99px;text-decoration:none;}
+    .inline-cta small{display:block;color:rgba(255,255,255,.75);font-size:.82rem;margin-top:.75rem;}
+    code{font-family:'SF Mono','Fira Code',monospace;font-size:.875em;background:#F0EFFF;color:#635BFF;padding:.15em .45em;border-radius:4px;}
+    pre{background:#1A1F36;color:#e2e8f0;padding:1.5rem;border-radius:12px;overflow-x:auto;margin-bottom:1.75rem;font-size:.85rem;line-height:1.7;}
+    pre code{background:none;color:inherit;padding:0;}
+  </style>
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-content">
+      <a href="../index.html" class="logo" style="text-decoration:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a>
+      <div class="nav-links"><a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a><a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a></div>
+    </div>
+  </header>
+  <main class="blog-article-main">
+    <article class="container section-padding" style="max-width:800px;padding-top:0;">
+      <header class="article-header fade-up">
+        <span style="font-size:.9rem;color:#635BFF;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Tutorial</span>
+        <h1 style="margin-top:1rem;margin-bottom:1rem;font-size:clamp(1.8rem,5vw,2.5rem);">How to Add Giscus Comments to a GitHub Pages Blog</h1>
+        <p style="font-size:1.2rem;color:#4F566B;max-width:700px;line-height:1.6;">Giscus uses GitHub Discussions as its backend — no third-party accounts, no spam filters to configure, no Disqus tracking scripts. Here's exactly how to add it to your GitHub Pages blog.</p>
+        <div class="author-meta">
+          <div style="width:48px;height:48px;border-radius:50%;background:#635BFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem;">A</div>
+          <div><div style="font-weight:600;color:#1A1F36;">Akhil K Thomas</div><div style="font-size:.9rem;color:#8898AA;">Published April 4, 2026 · 6 min read</div></div>
+        </div>
+      </header>
+      <div class="article-content fade-up delay-1">
+        <p>Static sites have a comments problem. You can't run server-side code, so you can't store comments in a database. The traditional solution — Disqus — works, but it's heavy, slow, and embeds third-party tracking into every page.</p>
+        <p>Giscus solves this elegantly for developer blogs: it stores comments in your GitHub repository's Discussions, renders them via the GitHub API, and authenticates readers through their existing GitHub accounts. No new service to sign up for. No data leaving your repository.</p>
+
+        <h2>Prerequisites</h2>
+        <ul>
+          <li>A GitHub Pages blog in a public repository</li>
+          <li>GitHub Discussions enabled on the repository</li>
+          <li>The Giscus GitHub App installed on the repository</li>
+        </ul>
+
+        <h2>The Manual Route (for existing static HTML blogs)</h2>
+
+        <div class="step-box"><h3><span class="step-num-badge">1</span>Enable Discussions on your repository</h3><p>Go to your GitHub repo → Settings → General → scroll to "Features" → check "Discussions." Click Save. This activates the Discussions tab on your repo.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">2</span>Install the Giscus GitHub App</h3><p>Go to <strong>github.com/apps/giscus</strong> and click "Install." Grant it access to the specific repository where your blog is hosted. This is required for Giscus to post comments to your Discussions.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">3</span>Generate your Giscus embed script</h3><p>Go to <strong>giscus.app</strong>. Enter your repository, select a mapping option (recommended: "Discussion title contains page URL"), choose your category, and pick a theme. The page will generate a <code>&lt;script&gt;</code> tag.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">4</span>Paste the script into your blog pages</h3><p>Add the generated <code>&lt;script&gt;</code> tag to the bottom of the <code>&lt;body&gt;</code> in each blog post HTML file where you want comments to appear. Save and push to GitHub. Giscus will render a comment section automatically.</p></div>
+
+        <p>The script looks like this:</p>
+        <pre><code>&lt;script src="https://giscus.app/client.js"
+  data-repo="yourusername/your-repo"
+  data-repo-id="YOUR_REPO_ID"
+  data-category="Comments"
+  data-category-id="YOUR_CATEGORY_ID"
+  data-mapping="url"
+  data-reactions-enabled="1"
+  data-theme="light"
+  crossorigin="anonymous"
+  async&gt;
+&lt;/script&gt;</code></pre>
+
+        <p>The <code>data-repo-id</code> and <code>data-category-id</code> values are generated automatically by giscus.app — you don't need to look them up manually.</p>
+
+        <h2>Verify it's working</h2>
+        <p>After pushing, open a blog post in a private/incognito window. You should see a Giscus comments widget at the bottom of the page. Sign in with GitHub to post a test comment. Check your repository's Discussions tab — the comment should appear there.</p>
+
+        <div class="inline-cta">
+          <h3>Giscus is built into Thooval.</h3>
+          <p>If you're setting up a new GitHub Pages blog, Thooval embeds Giscus with a single settings toggle — no script copying required. </p>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for macOS</a>
+          <small>macOS 12+ · Free and Open Source · No subscriptions</small>
+        </div>
+
+        <h2>Common Issues</h2>
+        <h3>Comments not showing up</h3>
+        <p>The most common cause: Discussions aren't enabled on the repo, or the Giscus GitHub App wasn't granted access to the specific repository. Re-check both in your repository settings and at github.com/apps/giscus.</p>
+        <h3>Wrong discussion category</h3>
+        <p>Giscus requires a specific Discussions category to work. When setting up on giscus.app, make sure the category you select actually exists in your repository's Discussions → Categories list.</p>
+        <h3>Comments appear on all posts the same</h3>
+        <p>This happens when <code>data-mapping</code> is set to "pathname" but your pages all share the same pathname. Change the mapping to "url" or "title" in your Giscus script — and update the embed code on your pages.</p>
+
+        <h2>Why Giscus Over Disqus</h2>
+        <p>Disqus works — but it slows your pages down significantly (it loads a large JavaScript bundle) and embeds cross-site tracking across every page where it's installed. Giscus is lightweight, privacy-respecting, and keeps all comment data in your own GitHub repository. For a developer blog, it's the clear choice.</p>
+      </div>
+    </article>
+  </main>
+  <footer class="footer"><div class="container footer-container"><div class="footer-brand"><a href="../index.html" class="logo" style="text-decoration:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a><p class="made-in">Crafted with care in Kochi, India.</p></div><div class="footer-links"><a href="index.html" class="social-link" style="margin-right:1rem;"><span>Blog Home</span></a><a href="../use-cases/github-pages-blog/index.html" class="social-link" style="margin-right:1rem;"><span>GitHub Pages Guide</span></a><a href="../terms.html" class="social-link" style="margin-left:1rem;"><span>Terms</span></a></div></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

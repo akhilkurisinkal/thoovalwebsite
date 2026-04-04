@@ -1,779 +1,1133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-JKP840CDJS');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thooval — The simplest way to run a personal blog</title>
-    <meta name="description"
-        content="Write locally, publish to GitHub Pages in one click. No servers, no databases, no subscriptions. Your blog is just files. Thooval is $15 once.">
-    <meta name="keywords"
-        content="developer blog tool, local first blogging, github pages publisher, markdown blog generator, indie hacker blog, static blog mac app">
-    <link rel="canonical" href="https://thooval.ink/">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-JKP840CDJS');
+  </script>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thooval.ink/">
-    <meta property="og:title" content="Thooval — The simplest way to run a personal blog">
-    <meta property="og:description"
-        content="Write locally, publish in one click. No servers, no databases, no subscriptions. Your blog is just files.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thooval — Free & Open Source macOS Markdown Editor</title>
+  <meta name="description" content="Thooval is a free, open-source macOS app that lets you write in a live Markdown editor and publish directly to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees.">
+  <meta name="keywords" content="macOS markdown editor GitHub Pages, markdown blog editor mac, open source github pages app, static site generator no terminal, ghost alternative free, jekyll alternative without ruby">
+  <link rel="canonical" href="https://thooval.ink/">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thooval.ink/">
-    <meta property="twitter:title" content="Thooval — The simplest way to run a personal blog">
-    <meta property="twitter:description"
-        content="Write locally, publish in one click. No servers, no databases, no subscriptions.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thooval.ink/">
+  <meta property="og:title" content="Thooval — Free & Open Source macOS Markdown Editor">
+  <meta property="og:description" content="Write in a live Markdown editor. Publish to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees. 100% free and open source.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://thooval.ink/">
+  <meta property="twitter:title" content="Thooval — Free & Open Source macOS Markdown Editor">
+  <meta property="twitter:description" content="Write in a live Markdown editor. Publish to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees. 100% free and open source.">
 
-    <!-- Schema.org markup for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Thooval",
-      "operatingSystem": "macOS",
-      "applicationCategory": "TextEditor",
-      "offers": {
-        "@type": "Offer",
-        "price": "15",
-        "priceCurrency": "USD"
-      },
-      "description": "Thooval is a desktop blogging app for Mac. Write locally, publish to GitHub Pages in one click. No servers, no databases, no subscriptions.",
-      "author": {
-        "@type": "Person",
-        "name": "Akhil K Thomas"
-      }
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Thooval",
+    "operatingSystem": "macOS",
+    "applicationCategory": "TextEditor",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Thooval is a free and open source macOS Markdown editor that publishes directly to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees.",
+    "author": {
+      "@type": "Person",
+      "name": "Akhil K Thomas"
     }
-    </script>
+  }
+  </script>
+
+  <!-- Google Fonts: Inter (body/UI) + Playfair Display (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===========================
+       STRIPE LIGHT MODE IDENTITY
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FFFFFF;
+      --bg-light:     #F6F9FC;
+      --bg-card:      #FFFFFF;
+      --text:         #1A1F36;
+      --text-muted:   #4F566B;
+      --text-dim:     #8898AA;
+      --border:       #E3E8EE;
+      --brand:        #635BFF;
+      --brand-hover:  #5851DF;
+      --brand-light:  #F0EFFF;
+      --brand-accent: #00D4FF;
+      --green:        #0E9E6E;
+      --green-light:  #D1FAE5;
+      --red-light:    #FEE2E2;
+      --red:          #DC2626;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-serif:   'Playfair Display', Georgia, serif;
+      --font-mono:    'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+
+      --radius-sm:    8px;
+      --radius-md:    12px;
+      --radius-lg:    24px;
+      --radius-pill:  99px;
+      --max-w:        1200px;
+      --shadow-sm:    0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:    0 7px 14px rgba(50,50,93,0.1), 0 3px 6px rgba(0,0,0,0.08);
+      --shadow-lg:    0 20px 40px -10px rgba(99,91,255,0.12);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.875em;
+      background: var(--brand-light);
+      color: var(--brand);
+      padding: 0.15em 0.45em;
+      border-radius: 4px;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ===========================
+       SCROLL REVEAL
+    =========================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+    .reveal.visible  { opacity: 1; transform: none; }
+
+    /* ===========================
+       NAV
+    =========================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .nav.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 2px 12px rgba(50,50,93,0.06);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo svg { color: var(--brand); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      font-weight: 600 !important;
+      font-size: 0.9rem !important;
+      background: var(--brand);
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease !important;
+    }
+    .nav-cta:hover { background: var(--brand-hover) !important; transform: translateY(-1px); box-shadow: var(--shadow-md) !important; }
+
+    /* ===========================
+       BUTTONS
+    =========================== */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background: var(--brand-light);
+      color: var(--brand);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(99,91,255,0.12);
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+    .hero {
+      padding: 8rem 1.5rem 5rem;
+      text-align: center;
+      background: radial-gradient(circle at 10% 20%, rgba(99,91,255,0.04) 0%, #fff 80%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      text-align: left;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--brand);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-sub strong { color: var(--text); }
+    .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .hero-trust {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .hero-mockup-col { display: flex; justify-content: center; }
+    .hero-terminal {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 430px;
+      box-shadow: 0 25px 50px -12px rgba(50,50,93,0.12), 0 8px 16px rgba(0,0,0,0.06);
+    }
+    .terminal-bar { display: flex; gap: 6px; margin-bottom: 1.25rem; }
+    .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .t-dot.red   { background: #ff5f57; }
+    .t-dot.amber { background: #ffbd2e; }
+    .t-dot.green { background: #28c941; }
+    .terminal-lines { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.9; }
+    .tl-dim   { color: var(--text-dim); }
+    .tl-muted { color: var(--text-muted); }
+    .tl-accent{ color: var(--brand); }
+    .tl-green { color: var(--green); }
+    .tl-text  { color: var(--text); }
+    .cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      background: var(--brand);
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+      margin-left: 2px;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ===========================
+       SECTIONS
+    =========================== */
+    .section { padding: 6rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .section-alt { background: var(--bg-light); }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .section-h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+    .section-h2 em { font-style: italic; color: var(--brand); }
+    .section-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 560px; line-height: 1.8; }
+
+    /* ===========================
+       PROBLEM
+    =========================== */
+    .problem-intro { text-align: center; margin-bottom: 4rem; }
+    .problem-intro .section-sub { margin: 0.75rem auto 0; }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .problem-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+    }
+    .problem-item:hover {
+      border-color: var(--brand);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .problem-x {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--red-light);
+      color: var(--red);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .problem-item h4 { font-family: var(--font-sans); font-size: 0.98rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .problem-item p  { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    .problem-compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .problem-col-head {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+    }
+    .col-head-bad  { background: var(--red-light);  color: var(--red);   }
+    .col-head-good { background: var(--green-light); color: var(--green); }
+    .step-list { display: flex; flex-direction: column; gap: 0; }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.1rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      background: var(--bg);
+    }
+    .step-item.bad  { border-color: #fca5a5; }
+    .step-item.good { border-color: #6ee7b7; background: #f0fdf4; color: var(--text); }
+    .step-item.good.final { border-color: var(--green); background: var(--green-light); font-weight: 600; color: var(--green); }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-arrow { text-align: center; color: var(--text-dim); font-size: 0.8rem; padding: 0.1rem 0; }
+    .step-check { color: var(--green); flex-shrink: 0; }
+    .vs-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 3rem;
+    }
+    .vs-line { width: 1px; flex: 1; background: var(--border); }
+    .vs-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin: 1rem 0;
+    }
+
+    /* ===========================
+       HOW IT WORKS
+    =========================== */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    .how-step { text-align: center; }
+    .how-num-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px; height: 52px;
+      background: var(--brand-light);
+      border: 1px solid rgba(99,91,255,0.15);
+      border-radius: var(--radius-md);
+      color: var(--brand);
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .how-step:hover .how-num-icon {
+      background: var(--brand);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(99,91,255,0.25);
+    }
+    .how-step h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .how-step p  { font-size: 0.95rem; max-width: 260px; margin: 0 auto; }
+
+    /* ===========================
+       FEATURES
+    =========================== */
+    .features-intro { margin-bottom: 3.5rem; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .feat-card {
+      padding: 2rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+    }
+    .feat-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(99,91,255,0.12);
+    }
+    .feat-tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      background: var(--brand-light);
+      color: var(--brand);
+      border-radius: var(--radius-pill);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(99,91,255,0.1);
+    }
+    .feat-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--brand);
+      margin-bottom: 1rem;
+    }
+    .feat-card h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .feat-card p  { font-size: 0.88rem; line-height: 1.7; }
+
+    /* ===========================
+       WHO IT'S FOR
+    =========================== */
+    .for-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .for-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: all 0.2s ease;
+    }
+    .for-card:hover { border-color: var(--brand); box-shadow: var(--shadow-sm); }
+    .for-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 0.75rem;
+    }
+    .for-card blockquote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 0.85rem;
+      border-left: 2px solid var(--brand);
+      padding-left: 0.85rem;
+    }
+    .for-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ===========================
+       PRICING
+    =========================== */
+    .pricing-wrap { max-width: 520px; margin: 0 auto; }
+    .pricing-card {
+      position: relative;
+      background: var(--bg);
+      border: 1.5px solid var(--brand);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      text-align: left;
+      box-shadow:
+        0 0 0 4px rgba(99,91,255,0.08),
+        0 20px 40px -10px rgba(99,91,255,0.14);
+      transition: all 0.25s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 0 4px rgba(99,91,255,0.12),
+        0 30px 60px -15px rgba(99,91,255,0.2);
+    }
+    .pricing-amount {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-amount span {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .pricing-amount .price-num {
+      font-family: var(--font-serif);
+      font-size: 5.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .pricing-once {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    .pricing-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .pricing-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+    .pricing-list li svg { color: var(--brand); flex-shrink: 0; }
+    .pricing-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand), #7C3AED);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 8px 20px rgba(99,91,255,0.35);
+      transition: all 0.2s ease;
+      margin-bottom: 1.25rem;
+    }
+    .pricing-cta:hover {
+      background: linear-gradient(135deg, var(--brand-hover), #6D28D9);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(99,91,255,0.45);
+    }
+    .pricing-trust {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* ===========================
+       CTA FOOTER
+    =========================== */
+    .cta-section {
+      padding: 7rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section .section-h2 { font-size: clamp(2rem,4vw,3rem); max-width: 700px; margin: 0 auto 1rem; }
+    .cta-section .section-sub { margin: 0 auto 2.5rem; max-width: 460px; }
+    .cta-footnote {
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text);
+    }
+    .footer-logo svg { color: var(--brand); }
+    .footer-tagline { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; }
+    .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 0.82rem; color: var(--text-dim); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-actions { align-items: center; }
+      .hero-sub { margin: 0 auto 2.5rem; }
+      .hero-mockup-col { display: none; }
+      .problem-compare { grid-template-columns: 1fr; }
+      .vs-divider { display: none; }
+      .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .for-grid { grid-template-columns: 1fr; }
+      .problems-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .nav-links > a:not(.nav-cta) { display: none; }
+      .pricing-card { padding: 2.5rem 1.75rem; }
+      .pricing-amount .price-num { font-size: 4.5rem; }
+      .hero { padding: 5rem 1.25rem 3rem; }
+    }
+  </style>
 </head>
-
 <body>
-    <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                    <line x1="16" y1="8" x2="2" y2="22"></line>
-                    <line x1="17.5" y1="15" x2="9" y2="15"></line>
-                </svg>
-                <span>Thooval</span>
-            </div>
-            <div class="nav-links">
-                <a href="blog/index.html" class="nav-link"
-                    style="font-weight: 500; color: var(--clr-text-muted);">Blog</a>
-                <a href="#pricing" class="nav-link" style="font-weight: 500; color: var(--clr-text-muted);">Pricing</a>
-                <a href="help.html" class="nav-link" style="font-weight: 500; color: var(--clr-text-muted);">Help</a>
-                <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"
-                    class="nav-cta">Download</a>
-            </div>
+
+  <!-- ============================
+       NAV
+  ============================= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+        Thooval
+      </a>
+      <div class="nav-links">
+        <a href="#problem">The Problem</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Open Source</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta" id="nav-download-btn">Download Free ↓</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO
+  ============================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <div class="hero-eyebrow"><span style="display:inline-block;background:var(--brand-light);color:var(--brand);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.25rem 0.8rem;border-radius:99px;border:1px solid rgba(99,91,255,0.2);">100% Free & Open Source</span></div>
+        <h1 class="hero-h1">The macOS Markdown Editor<br>That Publishes Directly to<br><em>GitHub Pages.</em></h1>
+        <p class="hero-sub">
+          Write in a live-formatted editor. Push to your blog with one click. <strong>No terminal. No pipelines. No monthly fee — ever.</strong> Thooval connects to your GitHub repo via a Personal Access Token. Your drafts stay on your Mac. Your blog lives on GitHub Pages — fast, free, and fully yours.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary" id="hero-download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download for macOS
+          </a>
+          <p class="hero-trust">macOS 12+ &nbsp;·&nbsp; MIT Licensed &nbsp;·&nbsp; Transparent &amp; Auditable</p>
+          <div style="display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:0.25rem;">
+            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ No CI/CD setup</span>
+            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ Drafts stay local</span>
+            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ Built-in Giscus &amp; GA4</span>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero section-padding">
-            <div class="container hero-container fade-up">
-                <span class="badge" style="margin-bottom: 2rem;">For developers &amp; indie hackers</span>
-                <h1 class="hero-title">The simplest way<br class="desktop-only"> to run a personal blog.</h1>
-                <p class="hero-subtitle">Write locally. Click publish. Your blog updates online. No servers, no
-                    databases, no monthly bills.</p>
-                <div class="hero-actions">
-                    <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"
-                        class="button primary-button" id="hero-download-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Download for macOS
-                    </a>
-                    <a href="#pricing" class="button secondary-button" id="hero-pricing-btn">
-                        $15 once, yours forever →
-                    </a>
-                </div>
-                <p class="hero-disclaimer">Apple Silicon Mac required.</p>
-            </div>
-            <div class="hero-mockup-wrapper fade-up delay-1">
-                <img src="assets/thooval_editor_mockup.png" alt="Thooval App UI — Minimalist Blog Editor"
-                    class="app-mockup" id="hero-mockup-image">
-            </div>
-        </section>
-
-        <!-- Workflow Comparison Section -->
-        <section class="workflow-section section-padding bg-light" id="workflow">
-            <div class="container">
-                <div class="workflow-header fade-up">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Blogging made simple</span>
-                    <h2 class="section-title">Stop fighting your tools.</h2>
-                    <p class="workflow-subtext">The traditional developer blog workflow has too many moving parts.
-                        Thooval removes all of them.</p>
-                </div>
-                <div class="workflow-compare fade-up delay-1">
-                    <div class="workflow-col workflow-old">
-                        <div class="workflow-col-label workflow-label-bad">The old way</div>
-                        <div class="workflow-steps-list">
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">1</span>
-                                <span>Write your post</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">2</span>
-                                <span>Run the build command</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">3</span>
-                                <span>Fix the build error</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">4</span>
-                                <span>Commit your changes</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">5</span>
-                                <span>Push to Git</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">6</span>
-                                <span>Wait for CI to deploy</span>
-                            </div>
-                            <div class="workflow-arrow">↓</div>
-                            <div class="workflow-step-item workflow-step-bad">
-                                <span class="workflow-step-num">7</span>
-                                <span>Check if it deployed correctly</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="workflow-divider">
-                        <div class="workflow-vs">vs</div>
-                    </div>
-                    <div class="workflow-col workflow-new">
-                        <div class="workflow-col-label workflow-label-good">With Thooval</div>
-                        <div class="workflow-steps-list">
-                            <div class="workflow-step-item workflow-step-good">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Write your post</span>
-                            </div>
-                            <div class="workflow-arrow workflow-arrow-good">↓</div>
-                            <div class="workflow-step-item workflow-step-good">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Click <strong>Publish</strong></span>
-                            </div>
-                            <div class="workflow-arrow workflow-arrow-good">↓</div>
-                            <div class="workflow-step-item workflow-step-good workflow-step-final">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Blog is live ✓</span>
-                            </div>
-                        </div>
-                        <p class="workflow-tagline">That's it. Really.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Thooval Section -->
-        <section class="why-section section-padding" id="why">
-            <div class="container">
-                <div class="why-header fade-up" style="text-align: center;">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Why Thooval</span>
-                    <h2 class="section-title">Your blog is just files.</h2>
-                    <p class="why-subtext">Thooval is built around one idea: your blog should be simple. No
-                        infrastructure to manage. No platform to depend on. Just you, your words, and a publish button.
-                    </p>
-                </div>
-                <div class="why-grid">
-                    <div class="why-card fade-up">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
-                        </div>
-                        <h3>Local-first</h3>
-                        <p>Posts are saved as <code>.md</code> files on your Mac. Nothing is stored online until you
-                            choose to publish. You stay in control.</p>
-                    </div>
-                    <div class="why-card fade-up delay-1">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="9" y1="3" x2="9" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3>Write like you think</h3>
-                        <p>Thooval's editor shows your writing formatted as you type — no raw Markdown syntax. Bold is
-                            bold. Headings look like headings. Similar to Typora.</p>
-                    </div>
-                    <div class="why-card fade-up delay-2">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </div>
-                        <h3>One-click publish</h3>
-                        <p>Hit publish. Thooval generates clean HTML pages and pushes your blog live to GitHub Pages. No
-                            commands, no config files.</p>
-                    </div>
-                    <div class="why-card fade-up">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-                            </svg>
-                        </div>
-                        <h3>No servers or databases</h3>
-                        <p>Your blog is a set of HTML files. GitHub hosts them for free. There is no server to maintain,
-                            no database to worry about.</p>
-                    </div>
-                    <div class="why-card fade-up delay-1">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>You own everything</h3>
-                        <p>Your files are yours. Switch tools anytime. Export anytime. If Thooval ever goes away, your
-                            blog and all your posts remain on your computer.</p>
-                    </div>
-                    <div class="why-card fade-up delay-2">
-                        <div class="why-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                        </div>
-                        <h3>Pay once</h3>
-                        <p>$15. That's it. No monthly plan, no seat fees, no renewal emails. You buy it once and it's
-                            yours to keep forever.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GitHub Publishing Section -->
-        <section class="publish-section section-padding bg-light" id="publishing">
-            <div class="container">
-                <div class="publish-inner fade-up">
-                    <div class="publish-text">
-                        <span class="badge" style="margin-bottom: 1.5rem;">One-click publishing</span>
-                        <h2 class="section-title">Connect once. Publish forever.</h2>
-                        <p>Link your GitHub account once using a personal access token. That's the only setup step.</p>
-                        <p style="margin-top: 1rem;">After that, clicking <strong>Publish</strong> in Thooval builds
-                            your static blog and pushes it directly to GitHub Pages. Your readers get a fully working,
-                            fast website — hosted for free by GitHub.</p>
-                        <div class="publish-steps">
-                            <div class="publish-step">
-                                <div class="publish-step-num">1</div>
-                                <div>
-                                    <strong>Create a GitHub repo</strong>
-                                    <p>Make a new repository for your blog. One time only.</p>
-                                </div>
-                            </div>
-                            <div class="publish-step">
-                                <div class="publish-step-num">2</div>
-                                <div>
-                                    <strong>Paste your access token</strong>
-                                    <p>Thooval uses it to push to your repo. You control the token.</p>
-                                </div>
-                            </div>
-                            <div class="publish-step">
-                                <div class="publish-step-num">3</div>
-                                <div>
-                                    <strong>Click Publish</strong>
-                                    <p>Every time you want to update your blog. One click.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="publish-callout">
-                        <div class="callout-card">
-                            <div class="callout-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg>
-                            </div>
-                            <h3>GitHub Pages is free</h3>
-                            <p>GitHub hosts static sites at no cost. Thooval just does the building and pushing for you.
-                            </p>
-                            <div class="callout-divider"></div>
-                            <div class="callout-fact">
-                                <strong>No hosting bill.</strong> Ever.
-                            </div>
-                            <div class="callout-fact">
-                                <strong>No server to rent.</strong> None needed.
-                            </div>
-                            <div class="callout-fact">
-                                <strong>No build pipeline.</strong> Thooval handles it.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ownership / Local-First Section -->
-        <section class="ownership-section section-padding" id="ownership">
-            <div class="container">
-                <div class="ownership-inner fade-up">
-                    <div class="ownership-text">
-                        <span class="badge" style="margin-bottom: 1.5rem;">Complete ownership</span>
-                        <h2 class="section-title">"Your blog<br>is just files."</h2>
-                        <p>Every post you write in Thooval is saved as a plain <code>.md</code> file on your computer.
-                            Open them in any text editor. Move them anywhere. Back them up however you like.</p>
-                        <p style="margin-top: 1rem;">There is no Thooval account. There is no cloud storage. Your
-                            content doesn't live on someone else's server. It lives on your Mac, the way it should.</p>
-                    </div>
-                    <div class="ownership-facts">
-                        <div class="ownership-fact">
-                            <div class="fact-icon fact-green">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Works offline</strong>
-                                <p>Write without an internet connection. Publish when you're ready.</p>
-                            </div>
-                        </div>
-                        <div class="ownership-fact">
-                            <div class="fact-icon fact-green">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Drag and drop images</strong>
-                                <p>Add images to your posts by dragging them in. They stay local with your files.</p>
-                            </div>
-                        </div>
-                        <div class="ownership-fact">
-                            <div class="fact-icon fact-green">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>No account required</strong>
-                                <p>Download, install, and start writing. No sign-up form.</p>
-                            </div>
-                        </div>
-                        <div class="ownership-fact">
-                            <div class="fact-icon fact-green">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Your data is yours, always</strong>
-                                <p>If you ever stop using Thooval, your posts are still on your Mac, unchanged.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- No Servers Section -->
-        <section class="noserver-section section-padding bg-light" id="no-servers">
-            <div class="container fade-up" style="text-align: center;">
-                <span class="badge" style="margin-bottom: 1.5rem;">Zero infrastructure</span>
-                <h2 class="section-title">No servers. No databases.<br class="desktop-only">No maintenance.</h2>
-                <p class="noserver-subtext">A static blog is just HTML files. GitHub serves them to your readers
-                    instantly — for free. You never have to think about uptime, backups, or hosting costs.</p>
-                <div class="noserver-grid">
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No web server to manage</span>
-                    </div>
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No database to maintain</span>
-                    </div>
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No hosting bill</span>
-                    </div>
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No deployment pipeline</span>
-                    </div>
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No cloud vendor lock-in</span>
-                    </div>
-                    <div class="noserver-item">
-                        <div class="noserver-x">✕</div>
-                        <span>No subscription fees</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Who It's For Section -->
-        <section class="for-section section-padding" id="who">
-            <div class="container">
-                <div class="for-header fade-up" style="text-align: center;">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Who it's for</span>
-                    <h2 class="section-title">Built around a simple<br class="desktop-only">blogging workflow.</h2>
-                    <p class="for-subtext">Thooval is designed for people who want to write and publish — without the
-                        setup.</p>
-                </div>
-                <div class="for-cards">
-                    <div class="for-card fade-up">
-                        <div class="for-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Developers</h3>
-                        <p>You want a personal blog but don't want to spend a weekend setting up a framework. You know
-                            Git. You just want it to work.</p>
-                    </div>
-                    <div class="for-card fade-up delay-1">
-                        <div class="for-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Indie hackers</h3>
-                        <p>You're building something and want to write about it publicly. You prefer tools you own over
-                            platforms that change their rules.</p>
-                    </div>
-                    <div class="for-card fade-up delay-2">
-                        <div class="for-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>File-first thinkers</h3>
-                        <p>You like owning your writing as plain files. You've been burned by platforms that disappeared
-                            or changed. You want your data on your machine.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Summary Section -->
-        <section class="features-section section-padding bg-light" id="features">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 4rem;" class="fade-up">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Everything included</span>
-                    <h2 class="section-title">Everything you need.<br class="desktop-only">Nothing you don't.</h2>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card fade-up">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
-                        </div>
-                        <h3>Local-first writing</h3>
-                        <p>Posts save as <code>.md</code> files on your Mac. No internet required to write.</p>
-                    </div>
-                    <div class="feature-card fade-up delay-1">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="9" y1="3" x2="9" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3>Live-formatted editor</h3>
-                        <p>See your writing as it'll appear. No raw Markdown syntax while you type.</p>
-                    </div>
-                    <div class="feature-card fade-up delay-2">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </div>
-                        <h3>One-click GitHub Pages publish</h3>
-                        <p>Thooval builds your static site and deploys it. One button.</p>
-                    </div>
-                    <div class="feature-card fade-up">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                                <path d="M3 9h18M9 21V9"></path>
-                            </svg>
-                        </div>
-                        <h3>Drag and drop images</h3>
-                        <p>Drop an image into your post. It's embedded automatically.</p>
-                    </div>
-                    <div class="feature-card fade-up delay-1">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10"></line>
-                                <line x1="12" y1="20" x2="12" y2="4"></line>
-                                <line x1="6" y1="20" x2="6" y2="14"></line>
-                            </svg>
-                        </div>
-                        <h3>Google Analytics built in</h3>
-                        <p>Paste your measurement ID. Visitor data appears in your Google dashboard automatically.</p>
-                    </div>
-                    <div class="feature-card fade-up delay-2">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                        </div>
-                        <h3>Comments via Giscus</h3>
-                        <p>Enable comments powered by GitHub Discussions. Readers log in with GitHub — no spam, no ads.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing-section section-padding" id="pricing">
-            <div class="container fade-up">
-                <div class="pricing-header">
-                    <span class="badge" style="margin-bottom: 1.5rem;">Simple Pricing</span>
-                    <h2 class="section-title">Pay once. Write forever.</h2>
-                    <p class="pricing-subtext">No subscriptions. No renewals. No surprises.</p>
-                </div>
-                <div class="pricing-card-wrapper">
-                    <div class="pricing-card">
-                        <div class="pricing-plan-name">Lifetime</div>
-                        <div class="pricing-amount">
-                            <span class="pricing-currency">$</span>
-                            <span class="pricing-price">15</span>
-                            <span class="pricing-period">one-time</span>
-                        </div>
-                        <p class="pricing-description">One payment. Use it for life. No renewals, no seat fees, no
-                            surprises.</p>
-                        <ul class="pricing-features">
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Pay $15 once — use it for life</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>All future updates included</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Local-first — your data never leaves your Mac</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>No monthly paywalls. Ever.</span>
-                            </li>
-                        </ul>
-                        <a href="https://thooval.lemonsqueezy.com/checkout/buy/d2df0a08-9412-4730-8147-a3fbfa86993d" class="button primary-button pricing-cta" id="pricing-buy-btn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                            Buy License Key — $15
-                        </a>
-
-                    </div>
-                    <div class="pricing-trust">
-                        <div class="trust-item">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                            <span>Your data never leaves your Mac</span>
-                        </div>
-                        <div class="trust-item">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-                            </svg>
-                            <span>Pay once, yours forever</span>
-                        </div>
-                        <div class="trust-item">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
-                            <span>All updates, forever</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="cta-section section-padding bg-light">
-            <div class="container fade-up">
-                <div class="cta-card">
-                    <h2 class="section-title">Start your blog today.</h2>
-                    <p class="cta-description">Download Thooval, write your first post, and publish it — all in under
-                        ten minutes. No hosting setup. No subscriptions. Just your words online.</p>
-                    <div class="cta-actions">
-                        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"
-                            class="button primary-button" id="cta-download-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Download for macOS
-                        </a>
-                    </div>
-                    <p class="cta-footnote">Apple Silicon Mac required. $15 — pay once, own it forever.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section section-padding" id="contact"
-            style="text-align: center; background-color: var(--clr-bg);">
-            <div class="container fade-up">
-                <span class="badge" style="margin-bottom: 1.5rem;">Support</span>
-                <h2 class="section-title">Get in touch</h2>
-                <p class="cta-description" style="max-width: 500px; margin: 0 auto 2rem; color: var(--clr-text-muted);">
-                    Have questions, need help setting up, or found a bug? We're here to help.</p>
-                <a href="mailto:support@thooval.ink?subject=Thooval%20Support%20Request" class="button"
-                    style="background: white; border: 1px solid var(--clr-border); color: var(--clr-text); font-weight: 500;"
-                    id="contact-email-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round"
-                        style="margin-right: 8px; margin-top: -2px; vertical-align: middle;">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                        </path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    support@thooval.ink
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <div class="logo">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                        <line x1="16" y1="8" x2="2" y2="22"></line>
-                        <line x1="17.5" y1="15" x2="9" y2="15"></line>
-                    </svg>
-                    <span>Thooval</span>
-                </div>
-                <p class="made-in">Crafted with love from <a href="https://www.keralatourism.org/" target="_blank"
-                        rel="noopener noreferrer"
-                        style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">God's Own
-                        Country</a>.</p>
-            </div>
-            <div class="footer-links">
-                <a href="blog/index.html" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
-                    <span>Blog</span>
-                </a>
-                <a href="terms.html" class="social-link">
-                    <span>Terms</span>
-                </a>
-                <a href="refund.html" class="social-link">
-                    <span>Refund Policy</span>
-                </a>
-                <a href="mailto:support@thooval.ink?subject=Thooval%20Support%20Request" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                        </path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>Contact</span>
-                </a>
-            </div>
+      </div>
+      <div class="hero-mockup-col reveal delay-2">
+        <div class="hero-terminal">
+          <div class="terminal-bar">
+            <div class="t-dot red"></div>
+            <div class="t-dot amber"></div>
+            <div class="t-dot green"></div>
+          </div>
+          <div class="terminal-lines">
+            <div class="tl-dim">── Thooval ─────────────────</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-text">📝 &nbsp;"Shipping my side project"</div>
+            <div class="tl-dim">&nbsp;&nbsp;&nbsp;<span class="tl-muted">draft.md</span> &nbsp;·&nbsp; 847 words</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-dim">── Editor ──────────────────</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-text">&nbsp;&nbsp;# Shipping my side project</div>
+            <div class="tl-muted">&nbsp;&nbsp;It started with a weekend…</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-dim">────────────────────────────</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-accent">▶  <span class="tl-text">[ Publish ]</span> &nbsp; ← click once</div>
+            <div class="tl-muted">&nbsp;</div>
+            <div class="tl-green">✓ &nbsp;Live on GitHub Pages</div>
+            <div class="tl-muted">&nbsp;&nbsp;&nbsp;username.github.io/blog<span class="cursor"></span></div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ============================
+       THE PROBLEM
+  ============================= -->
+  <section class="section section-alt" id="problem">
+    <div class="container">
+      <div class="problem-intro reveal">
+        <div class="section-label">The Problem</div>
+        <h2 class="section-h2">You just want to write.</h2>
+        <p class="section-sub">Instead, you're forced to choose between renting space on platforms that lock in your audience, paying $100+/year for a Ghost subscription, or spending your weekend fighting Markdown CLI generators just to host for free.</p>
+      </div>
+
+      <div class="problems-grid reveal delay-1">
+        <div class="problem-item">
+          <span class="problem-x">✕</span>
+          <div>
+            <h4>Garbled static site generators</h4>
+            <p>Hugo and Jekyll produce garbage codebases you inherit forever. One wrong template variable and your whole build breaks.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <span class="problem-x">✕</span>
+          <div>
+            <h4>Substack &amp; Medium: rented space</h4>
+            <p>You're building on someone else's platform. They change the algorithm. They add a paywall. Your audience isn't yours.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <span class="problem-x">✕</span>
+          <div>
+            <h4>Monthly subscriptions &amp; hosting bills</h4>
+            <p>Ghost starts at $9/month. WordPress hosting adds up. You're paying $100+/year to host 12 blog posts.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <span class="problem-x">✕</span>
+          <div>
+            <h4>Editors that show raw <code>**markdown**</code></h4>
+            <p>Most CLI-based workflows force you to write in a terminal editor and mentally parse raw syntax. Typora proved there's a better way.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 4rem;">
+        <div class="reveal" style="text-align:center; margin-bottom: 2rem;">
+          <div class="section-label" style="justify-content:center;"><span style="display:none"></span>The workflow difference</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text);">7 steps vs. 2 steps.</h3>
+        </div>
+        <div class="problem-compare reveal delay-1">
+          <div>
+            <div class="problem-col-head col-head-bad">The old way</div>
+            <div class="step-list">
+              <div class="step-item bad"><span class="step-num">1</span> Write your post</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">2</span> Run the build command</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">3</span> Fix the build error</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">4</span> Commit your changes</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">5</span> <code>git push</code> to remote</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">6</span> Wait for CI to deploy</div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item bad"><span class="step-num">7</span> Verify it actually deployed</div>
+            </div>
+          </div>
+          <div class="vs-divider">
+            <div class="vs-line"></div>
+            <div class="vs-badge">vs</div>
+            <div class="vs-line"></div>
+          </div>
+          <div>
+            <div class="problem-col-head col-head-good">With Thooval</div>
+            <div class="step-list">
+              <div class="step-item good">
+                <svg class="step-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Write your post
+              </div>
+              <div class="step-arrow">↓</div>
+              <div class="step-item good final">
+                <svg class="step-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Click <strong>Publish</strong> — Blog is live ✓
+              </div>
+            </div>
+            <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 1.25rem; letter-spacing: 0.04em;">That's it. Really.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       HOW IT WORKS
+  ============================= -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 3rem;">
+        <div class="section-label">How it works</div>
+        <h2 class="section-h2">Set up once.<br>Publish forever.</h2>
+        <p class="section-sub">One-time GitHub setup, then it's a single click every time. No CLI, no CI pipelines, no config files.</p>
+      </div>
+      <div class="how-grid reveal delay-1">
+        <div class="how-step">
+          <div class="how-num-icon">01</div>
+          <h3>Create a GitHub repo</h3>
+          <p>Make a new repository for your blog on GitHub. Enable Pages. Takes two minutes. You only do this once.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-num-icon">02</div>
+          <h3>Paste your access token</h3>
+          <p>Generate a GitHub personal access token and paste it into Thooval. That's the only "technical" step. You control the token.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-num-icon">03</div>
+          <h3>Click <code>Publish</code> every time</h3>
+          <p>Write in the WYSIWYG editor. Hit Publish. Thooval builds clean static HTML and pushes it to <strong>GitHub Pages</strong> — your <strong>free hosting</strong> — automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FEATURES
+  ============================= -->
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="features-intro reveal">
+        <div class="section-label">Key Features</div>
+        <h2 class="section-h2">A real editor.<br><em>Actual ownership.</em></h2>
+        <p class="section-sub">Thooval is built around a Typora-style WYSIWYG editor with one-click GitHub Pages deployment. Everything else follows from that.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card reveal">
+          <div class="feat-tag">Core</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>WYSIWYG editor — like Typora</h3>
+          <p>Write and see your post formatted as you type. Bold is bold. Headings look like headings. No raw <code>**markdown**</code> syntax cluttering your view.</p>
+        </div>
+        <div class="feat-card reveal delay-1">
+          <div class="feat-tag">Core</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <h3>One-click GitHub Pages deploy</h3>
+          <p>Hit Publish. Thooval generates clean HTML and pushes it directly to your <strong>GitHub Pages</strong> repo. Your blog is live — for free — in seconds.</p>
+        </div>
+        <div class="feat-card reveal delay-2">
+          <div class="feat-tag">Ownership</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Local-first — <code>.md</code> files on your Mac</h3>
+          <p>Every post is a plain <code>.md</code> file on your disk. No cloud storage, no Thooval account. Open them in any editor. They're yours unconditionally.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-tag">Privacy</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <h3>No account required</h3>
+          <p>Download, install, start writing. No sign-up email, no password, no profile. You don't need an account with Thooval — ever.</p>
+        </div>
+        <div class="feat-card reveal delay-1">
+          <div class="feat-tag">Analytics</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Google Analytics built-in</h3>
+          <p>Paste your GA4 measurement ID once. Thooval embeds the tracking tag in every page automatically. See who's reading — no plugins needed.</p>
+        </div>
+        <div class="feat-card reveal delay-2">
+          <div class="feat-tag">Comments</div>
+          <div class="feat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Giscus comments via GitHub Discussions</h3>
+          <p>Enable reader comments powered by GitHub Discussions. No spam bots, no third-party tracking. Readers authenticate with GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       WHO IT'S FOR
+  ============================= -->
+  <section class="section" id="who">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Who it's for</div>
+        <h2 class="section-h2">Built for people who<br>own their tools.</h2>
+        <p class="section-sub">Not for everyone. Deliberately for the people who know exactly what they want — and what they don't.</p>
+      </div>
+      <div class="for-grid">
+        <div class="for-card reveal delay-1">
+          <div class="for-label">Developers</div>
+          <blockquote>"I know Git. I just don't want a weekend-long setup."</blockquote>
+          <p>You want a personal blog without the overhead of Hugo templating, broken CI pipelines, or maintaining a VPS. You understand GitHub. Thooval does the rest.</p>
+        </div>
+        <div class="for-card reveal delay-2">
+          <div class="for-label">Indie Hackers</div>
+          <blockquote>"I'm building in public. I'd rather write than configure."</blockquote>
+          <p>You're shipping something and want to document it. You want readers to find you, not Substack's algorithm. Your blog should be yours — not rented space.</p>
+        </div>
+        <div class="for-card reveal delay-3">
+          <div class="for-label">File-first thinkers</div>
+          <blockquote>"Every platform I trusted eventually let me down."</blockquote>
+          <p>You've been burned. Medium introduced paywalls. Substack pivoted. WordPress needed constant security updates. Your writing lives on your Mac — not on someone else's server.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       OPEN SOURCE
+  ============================= -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;" class="reveal">
+        <div class="section-label" style="justify-content:center;"><span></span>Open Source</div>
+        <h2 class="section-h2" style="margin-bottom:0.5rem;">Free software.<br>Forever.</h2>
+        <p class="section-sub" style="margin: 0.75rem auto 0;">No subscriptions. No paywalls. No surprises. Just software built for the community.</p>
+      </div>
+      <div class="pricing-wrap reveal delay-1">
+        <div class="pricing-card">
+          <div class="pricing-amount"><span>$</span><span class="price-num">0</span></div>
+          <div class="pricing-once">MIT Licensed &nbsp;·&nbsp; Available on GitHub</div>
+          <ul class="pricing-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              100% Free and Open Source software
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              All future updates included automatically
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Free blog hosting on GitHub Pages
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Local-first — data never leaves your Mac
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              No monthly paywalls, ever
+            </li>
+          </ul>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="pricing-cta" id="pricing-trial-btn" style="background:var(--brand);box-shadow:0 8px 20px rgba(99,91,255,0.35);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download for macOS
+          </a>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases" id="pricing-buy-btn" target="_blank" style="display:block;text-align:center;font-size:0.88rem;color:var(--text-muted);font-weight:500;margin-top:0.5rem;">View Source Code on GitHub →</a>
+          <p class="pricing-trust" style="margin-top:0.75rem;">Support the project by leaving a star on GitHub</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CTA FOOTER
+  ============================= -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <div class="section-label">Zero risk. 100% Free.</div>
+      <h2 class="section-h2">Your GitHub Pages blog,<br><em>live in under 10 minutes.</em></h2>
+      <p class="section-sub">No hosting setup. No terminal. No subscriptions — ever. Download Thooval, connect GitHub once, and publish your first post today.</p>
+      <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary" style="display:inline-flex;" id="cta-download-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download for macOS
+      </a>
+      <p class="cta-footnote">macOS 12+ &nbsp;·&nbsp; MIT Licensed &nbsp;·&nbsp; Free and Open Source</p>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+          Thooval
+        </div>
+        <p class="footer-tagline">macOS Markdown editor for GitHub Pages &nbsp;·&nbsp; Made in God's Own Country</p>
+      </div>
+      <div class="footer-links">
+        <a href="blog/index.html">Blog</a>
+        <a href="alternatives/index.html">Alternatives</a>
+        <a href="#pricing">Pricing</a>
+        <a href="help.html">Help</a>
+        <a href="terms.html">Terms</a>
+        <a href="refund.html">Refund Policy</a>
+        <a href="mailto:support@thooval.ink?subject=Thooval%20Support">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Thooval</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    // Sticky nav shadow on scroll
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 24px rgba(0,0,0,0.4)' : 'none';
+    }, { passive: true });
+  </script>
+
 </body>
-
 </html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Pages Blog Setup Without a Terminal — Under 5 Minutes | Thooval Blog</title>
+  <meta name="description" content="How to set up a GitHub Pages blog in under 5 minutes — no terminal, no Ruby, no CI pipelines. A step-by-step guide for developers who want a blog, not a build system.">
+  <meta name="keywords" content="github pages blog setup no terminal, how to set up github pages blog, github pages blog without command line, github pages blog for beginners">
+  <link rel="canonical" href="https://thooval.ink/blog/github-pages-blog-no-terminal.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thooval.ink/blog/github-pages-blog-no-terminal.html">
+  <meta property="og:title" content="GitHub Pages Blog Setup Without a Terminal — Under 5 Minutes">
+  <meta property="og:description" content="Set up a GitHub Pages blog in under 5 minutes — no terminal, no Ruby, no CI pipelines required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .article-content h2{font-size:1.9rem;margin-top:3rem;margin-bottom:1rem;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1A1F36;letter-spacing:-.02em;}
+    .article-content h3{font-size:1.35rem;margin-top:1.75rem;margin-bottom:.65rem;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1A1F36;}
+    .article-content p{margin-bottom:1.5rem;font-size:1.1rem;color:#4F566B;line-height:1.8;}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:1.5rem;}
+    .article-content li{margin-bottom:.5rem;font-size:1.1rem;color:#4F566B;line-height:1.7;}
+    .article-content strong{color:#1A1F36;}
+    .article-header{border-bottom:1px solid #E3E8EE;padding-bottom:2rem;margin-bottom:3rem;}
+    .author-meta{display:flex;align-items:center;gap:1rem;margin-top:2rem;}
+    .step-box{background:#F6F9FC;border:1px solid #E3E8EE;border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+    .step-box h3{font-size:1.1rem;margin-bottom:.5rem;color:#1A1F36;}
+    .step-box p{font-size:.95rem;margin:0;color:#4F566B;}
+    .step-num-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#635BFF;color:#fff;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:.75rem;flex-shrink:0;vertical-align:middle;}
+    .inline-cta{background:linear-gradient(135deg,#0E9E6E,#059669);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:3rem 0;}
+    .inline-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#fff;margin-bottom:.75rem;}
+    .inline-cta p{color:rgba(255,255,255,.9);font-size:1rem;margin-bottom:1.5rem;}
+    .inline-cta a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#0E9E6E;font-weight:700;font-size:1rem;padding:.8rem 1.75rem;border-radius:99px;text-decoration:none;}
+    .inline-cta small{display:block;color:rgba(255,255,255,.75);font-size:.82rem;margin-top:.75rem;}
+  </style>
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-content">
+      <a href="../index.html" class="logo" style="text-decoration:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-article-main">
+    <article class="container section-padding" style="max-width:800px;padding-top:0;">
+      <header class="article-header fade-up">
+        <span style="font-size:.9rem;color:#635BFF;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Tutorial</span>
+        <h1 style="margin-top:1rem;margin-bottom:1rem;font-size:clamp(1.8rem,5vw,2.5rem);">How to Set Up a GitHub Pages Blog in Under 5 Minutes (No Terminal Required)</h1>
+        <p style="font-size:1.2rem;color:#4F566B;max-width:700px;line-height:1.6;">GitHub Pages is free, fast, and permanent hosting for your blog. The old way required Ruby, Jekyll, and a working knowledge of the terminal. This guide shows you the new way.</p>
+        <div class="author-meta">
+          <div style="width:48px;height:48px;border-radius:50%;background:#635BFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem;">A</div>
+          <div><div style="font-weight:600;color:#1A1F36;">Akhil K Thomas</div><div style="font-size:.9rem;color:#8898AA;">Published April 4, 2026 · 5 min read</div></div>
+        </div>
+      </header>
+
+      <div class="article-content fade-up delay-1">
+        <p>GitHub Pages has always been the best free hosting option for developer blogs. A public GitHub repository, served as a static website, with a free <code>username.github.io</code> domain and support for custom domains. It's fast, indexed by search engines, and runs indefinitely at zero cost.</p>
+        <p>The problem has always been the setup. GitHub Pages was designed to work with Jekyll, which requires Ruby, Bundler, and a functioning terminal environment. One wrong Ruby version and your entire build breaks before you've written a single word.</p>
+        <p>This guide shows you how to get a GitHub Pages blog live in under 5 minutes — with no terminal, no Ruby, and no CI pipeline configuration.</p>
+
+        <h2>The Traditional Jekyll Route (Skip This)</h2>
+        <p>For historical context, here's what setting up a Jekyll + GitHub Pages blog used to require:</p>
+        <ol>
+          <li>Install Ruby (the right version)</li>
+          <li>Install Bundler (<code>gem install bundler</code>)</li>
+          <li>Create a Jekyll project (<code>jekyll new my-blog</code>)</li>
+          <li>Configure <code>_config.yml</code></li>
+          <li>Write your post in raw Markdown</li>
+          <li>Run <code>bundle exec jekyll serve</code> to preview</li>
+          <li>Fix whatever Liquid template error appeared</li>
+          <li>Run <code>bundle exec jekyll build</code></li>
+          <li>Commit and push — then wait for GitHub Actions to deploy</li>
+        </ol>
+        <p>That's 9 steps before your blog is live, and steps 1–4 alone can take an hour the first time. If you're on macOS and your system Ruby conflicts with the Jekyll-required version, add two more hours of debugging.</p>
+
+        <h2>The No-Terminal Route (Do This Instead)</h2>
+        <p>The approach below uses <strong>Thooval</strong>, a native macOS app that handles everything the Jekyll + CI pipeline used to do — from within a clean desktop interface. Here's the full setup:</p>
+
+        <div class="step-box"><h3><span class="step-num-badge">1</span>Create a GitHub repository</h3><p>Go to github.com → New repository. Name it anything (e.g., <code>my-blog</code>). Set it to Public. Click "Create repository." This takes 60 seconds.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">2</span>Enable GitHub Pages</h3><p>In the repo, go to Settings → Pages. Set "Source" to "Deploy from a branch," select <code>main</code>, and save. GitHub Pages is now enabled for this repo.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">3</span>Generate a Personal Access Token</h3><p>Go to GitHub Settings → Developer Settings → Personal Access Tokens → Tokens (classic). Generate a token with <code>repo</code> scope. Copy it — you only see it once.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">4</span>Connect Thooval to your repo</h3><p>Download and open Thooval. In Settings, paste your GitHub username, repo name, and Personal Access Token. Thooval connects to your repo. That's the only technical step — and you only do it once.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">5</span>Write your first post and click Publish</h3><p>Create a new post in Thooval's WYSIWYG editor. Write anything. Click <strong>Publish</strong>. Thooval builds the HTML and pushes it directly to your GitHub Pages repo. Your blog is live at <code>username.github.io/my-blog</code>.</p></div>
+
+        <p>Total time from "create a GitHub repo" to "blog is live": under 5 minutes on a fresh setup. Under 30 seconds for every subsequent post.</p>
+
+        <div class="inline-cta">
+          <h3>Try this right now — for free.</h3>
+          <p>Thooval's Thooval is 100% free and open source. Download, connect GitHub, and publish your first post today.</p>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for macOS</a>
+          <small>macOS 12+ · Free and Open Source · No subscriptions</small>
+        </div>
+
+        <h2>What About Custom Domains?</h2>
+        <p>GitHub Pages supports custom domains natively. Go to your repo's Settings → Pages → Custom domain. Enter your domain (e.g., <code>blog.yourdomain.com</code>). Then add a CNAME record at your DNS provider pointing to <code>username.github.io</code>. GitHub handles the SSL certificate automatically via Let's Encrypt.</p>
+
+        <h2>Adding Comments to Your Blog</h2>
+        <p>Static sites can't run server-side code — so traditional comment systems don't work. Thooval has Giscus built in: a comments system powered by GitHub Discussions. Your readers authenticate with GitHub (which most developers already have), and comments are stored in your repository's Discussions tab — no third-party service required.</p>
+
+        <h2>The Result</h2>
+        <p>You get a fast, SEO-friendly, static HTML blog hosted on GitHub Pages — free, forever — with no monthly bills, no server maintenance, and no terminal. Every post is a <code>.md</code> file on your Mac. Your blog is a git repository you fully control.</p>
+        <p>For a <a href="../alternatives/jekyll-alternative/index.html" style="color:#635BFF;font-weight:500;">full comparison with the traditional Jekyll approach →</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand"><a href="../index.html" class="logo" style="text-decoration:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a><p class="made-in">Crafted with care in Kochi, India.</p></div>
+      <div class="footer-links"><a href="index.html" class="social-link" style="margin-right:1rem;"><span>Blog Home</span></a><a href="../use-cases/github-pages-blog/index.html" class="social-link" style="margin-right:1rem;"><span>GitHub Pages Guide</span></a><a href="../terms.html" class="social-link" style="margin-left:1rem;"><span>Terms</span></a></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

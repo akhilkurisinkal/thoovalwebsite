@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashnode Alternative — Host Your Blog on GitHub, Not Theirs | Thooval</title>
+  <meta name="description" content="Looking for a Hashnode alternative where your blog lives on your own domain and server? Thooval publishes to GitHub Pages directly from macOS. 100% free and open source.">
+  <meta name="keywords" content="Hashnode alternative self-hosted, Hashnode alternative own domain, developer blog alternative Hashnode, blog off Hashnode platform">
+  <link rel="canonical" href="https://thooval.ink/alternatives/hashnode-alternative/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thooval.ink/alternatives/hashnode-alternative/">
+  <meta property="og:title" content="Hashnode Alternative — Keep Your Blog Off Their Server | Thooval">
+  <meta property="og:description" content="Hashnode hosts your blog on their infrastructure. Thooval puts it on GitHub Pages — your server, your domain, your data. 100% free.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#fff;--bg-light:#F6F9FC;--text:#1A1F36;--text-muted:#4F566B;--text-dim:#8898AA;--border:#E3E8EE;--brand:#635BFF;--brand-hover:#5851DF;--brand-light:#F0EFFF;--green:#0E9E6E;--green-light:#D1FAE5;--red-light:#FEE2E2;--red:#DC2626;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--font-serif:'Playfair Display',Georgia,serif;--radius-pill:99px;--radius-md:12px;--max-w:1100px;--shadow-sm:0 4px 6px rgba(50,50,93,0.11),0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 7px 14px rgba(50,50,93,0.1),0 3px 6px rgba(0,0,0,0.08);}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;transition:all 0.2s ease;}
+    h1,h2,h3,h4{font-family:var(--font-serif);font-weight:700;line-height:1.15;letter-spacing:-0.02em;}
+    p{color:var(--text-muted);font-size:1.05rem;line-height:1.75;}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 1.5rem;}
+    .nav{position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(50,50,93,.06);}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;display:flex;align-items:center;gap:.5rem;}
+    .nav-logo svg{color:var(--brand);}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;}
+    .nav-links a{font-size:.95rem;font-weight:500;color:var(--text-muted);}
+    .nav-links a:hover{color:var(--text);}
+    .nav-cta{background:var(--brand);color:#fff!important;padding:.5rem 1.25rem;border-radius:var(--radius-pill);font-weight:600!important;font-size:.9rem!important;}
+    .nav-cta:hover{background:var(--brand-hover)!important;}
+    .hero{padding:6rem 1.5rem 4rem;background:radial-gradient(circle at 10% 20%,rgba(99,91,255,.04) 0%,#fff 70%);border-bottom:1px solid var(--border);}
+    .hero-inner{max-width:800px;margin:0 auto;text-align:center;}
+    .badge{display:inline-block;padding:.3rem 1rem;background:var(--brand-light);color:var(--brand);border-radius:var(--radius-pill);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(99,91,255,.12);margin-bottom:1.5rem;}
+    .hero h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:var(--text);margin-bottom:1.25rem;}
+    .hero h1 em{font-style:italic;color:var(--brand);}
+    .hero-sub{font-size:1.15rem;color:var(--text-muted);max-width:620px;margin:0 auto 2.5rem;line-height:1.8;}
+    .hero-sub strong{color:var(--text);}
+    .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;font-family:var(--font-sans);font-size:1.05rem;font-weight:600;padding:.9rem 2rem;border-radius:var(--radius-pill);box-shadow:var(--shadow-sm);transition:all .2s ease;}
+    .btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+    .btn-trial{background:linear-gradient(135deg,var(--green),#059669);box-shadow:0 8px 20px rgba(14,158,110,.3);}
+    .btn-trial:hover{background:linear-gradient(135deg,#0a8a5f,#047857);}
+    .hero-trust{margin-top:1rem;font-size:.83rem;color:var(--text-dim);}
+    .section{padding:5rem 1.5rem;border-bottom:1px solid var(--border);}
+    .section-alt{background:var(--bg-light);}
+    .section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:.75rem;}
+    .section-h2{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--text);margin-bottom:1rem;}
+    .section-h2 em{font-style:italic;color:var(--brand);}
+    .section-sub{font-size:1.05rem;color:var(--text-muted);max-width:580px;line-height:1.8;}
+    .compare-wrap{overflow-x:auto;margin-top:2.5rem;}
+    table{width:100%;border-collapse:collapse;font-size:.95rem;}
+    thead th{padding:1rem 1.25rem;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid var(--border);text-align:left;color:var(--text-muted);}
+    thead th.col-bad{color:var(--red);}
+    thead th.col-good{color:var(--green);}
+    tbody td{padding:.9rem 1.25rem;border-bottom:1px solid var(--border);color:var(--text-muted);}
+    tbody td:first-child{font-weight:600;color:var(--text);}
+    tbody tr:last-child td{border-bottom:none;}
+    tbody tr:hover td{background:var(--bg-light);}
+    .cell-bad{color:var(--red);font-weight:600;}
+    .cell-good{color:var(--green);font-weight:600;}
+    .feats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+    .feat-card{padding:1.75rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);transition:all .2s ease;}
+    .feat-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:var(--shadow-md);}
+    .feat-icon{font-size:1.5rem;margin-bottom:.75rem;}
+    .feat-card h3{font-family:var(--font-serif);font-size:1.05rem;margin-bottom:.4rem;}
+    .feat-card p{font-size:.88rem;line-height:1.65;}
+    .cta-block{text-align:center;padding:5rem 1.5rem;}
+    .cta-block h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;}
+    .cta-block .section-sub{margin:0 auto 2rem;}
+    .cta-footnote{margin-top:1rem;font-size:.82rem;color:var(--text-dim);}
+    .footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
+    .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:.4rem;}
+    .footer-logo svg{color:var(--brand);}
+    .footer-tagline{font-size:.8rem;color:var(--text-muted);margin-top:.3rem;}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .footer-links a{font-size:.88rem;font-weight:500;color:var(--text-muted);}
+    .footer-links a:hover{color:var(--text);}
+    .footer-copy{font-size:.8rem;color:var(--text-dim);}
+    @media(max-width:768px){.feats-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.feats-grid{grid-template-columns:1fr;}.nav-links>a:not(.nav-cta){display:none;}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+        Thooval
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html#features">Features</a>
+        <a href="../../index.html#pricing">Pricing</a>
+        <a href="../../blog/index.html">Blog</a>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Hashnode Alternative</div>
+      <h1>The Hashnode Alternative<br>That Keeps Your Blog<br><em>Off Their Server</em></h1>
+      <p class="hero-sub">Hashnode is a great community — but your blog still lives on their infrastructure. Thooval publishes your posts to <strong>your GitHub Pages domain</strong>, from your Mac, as plain HTML files. <strong>Your blog. Your server. Your rules.</strong></p>
+      <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary btn-trial">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download for macOS
+      </a>
+      <p class="hero-trust">macOS 12+ &nbsp;·&nbsp; MIT Licensed &nbsp;·&nbsp; No subscriptions</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-label">Feature Comparison</div>
+      <h2 class="section-h2">Hashnode vs. Thooval — <em>Side by Side</em></h2>
+      <div class="compare-wrap">
+        <table>
+          <thead>
+            <tr><th>Feature</th><th class="col-bad">Hashnode</th><th class="col-good">Thooval</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Where your blog lives</td><td class="cell-bad">Hashnode's servers</td><td class="cell-good">Your GitHub repo (you own it)</td></tr>
+            <tr><td>Custom domain</td><td>Yes (with DNS config)</td><td class="cell-good">Yes — native GitHub Pages custom domain</td></tr>
+            <tr><td>Works if Hashnode shuts down</td><td class="cell-bad">No — your blog disappears</td><td class="cell-good">Yes — static HTML stays on GitHub forever</td></tr>
+            <tr><td>Content format</td><td class="cell-bad">Stored in Hashnode's database</td><td class="cell-good">Local .md files on your Mac</td></tr>
+            <tr><td>Offline writing</td><td class="cell-bad">No — requires Hashnode connection</td><td class="cell-good">Yes — fully offline</td></tr>
+            <tr><td>Pricing</td><td class="cell-good">Free tier available</td><td class="cell-good">Free & open source</td></tr>
+            <tr><td>Comments</td><td>Hashnode Comments</td><td class="cell-good">Giscus via GitHub Discussions (free)</td></tr>
+            <tr><td>Analytics</td><td>Hashnode Analytics</td><td class="cell-good">Google Analytics 4 built-in</td></tr>
+            <tr><td>Privacy (drafts)</td><td class="cell-bad">Drafts stored on Hashnode</td><td class="cell-good">Drafts stay on your Mac only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Why ownership matters</div>
+      <h2 class="section-h2">The case for owning<br><em>your infrastructure</em></h2>
+      <div class="feats-grid">
+        <div class="feat-card">
+          <div class="feat-icon">🏠</div>
+          <h3>It's your property</h3>
+          <p>Your GitHub Pages repo is a git repository that you control. You can clone it, back it up, migrate it, or switch tools — no permission needed from anyone.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔒</div>
+          <h3>Drafts stay private</h3>
+          <p>On Hashnode, your drafts are stored in their database. With Thooval, every draft is a <code>.md</code> file on your Mac that has never touched anyone else's server.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📤</div>
+          <h3>One-click publish</h3>
+          <p>Thooval builds and pushes clean HTML to GitHub Pages in seconds. No copy-pasting content into a web interface. Write locally, click Publish.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">💻</div>
+          <h3>Native macOS experience</h3>
+          <p>Thooval is a real macOS app — not a browser tab. Live-formatted Markdown, keyboard shortcuts that work, and a distraction-free environment.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">💲</div>
+          <h3>100% Free vs. forever free on Hashnode</h3>
+          <p>Hashnode is free. But free platforms monetize your attention, your data, or your readers. Thooval is open source and has no other incentive model.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🌐</div>
+          <h3>Your GitHub profile</h3>
+          <p>Your blog repo appears on your GitHub profile. Employers, collaborators, and readers can see your writing history and contribution graph — not just a Hashnode URL.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <div class="section-label">Zero risk</div>
+      <h2 class="section-h2">Own your blog.<br><em>Down to the HTML file.</em></h2>
+      <p class="section-sub">Write in a live Markdown editor on your Mac. Publish to GitHub Pages with one click. Your blog is a git repo — and it's yours forever. </p>
+      <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary btn-trial">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download for macOS
+      </a>
+      <p class="cta-footnote">macOS 12+ &nbsp;·&nbsp; One-time Free and Open Source &nbsp;·&nbsp; <a href="https://github.com/akhilkurisinkal/thooval-releases" style="color:var(--brand);">View on GitHub →</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+          Thooval
+        </div>
+        <p class="footer-tagline">macOS Markdown editor for GitHub Pages · Made in God's Own Country</p>
+      </div>
+      <div class="footer-links">
+        <a href="../../index.html">Home</a>
+        <a href="../index.html">Alternatives</a>
+        <a href="../../blog/index.html">Blog</a>
+        <a href="../../help.html">Help</a>
+        <a href="../../terms.html">Terms</a>
+      </div>
+      <p class="footer-copy">© 2026 Thooval</p>
+    </div>
+  </footer>
+</body>
+</html>

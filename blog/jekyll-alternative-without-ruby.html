@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jekyll Alternative Without Ruby — Blog Without the Build System | Thooval Blog</title>
+  <meta name="description" content="Jekyll is dead weight for a personal blog. Here's how thousands of developers are blogging without Ruby, Bundler, or a single terminal command — and publishing to GitHub Pages for free.">
+  <meta name="keywords" content="jekyll alternative without ruby, blog without jekyll, jekyll too complicated, github pages without jekyll, replace jekyll blog">
+  <link rel="canonical" href="https://thooval.ink/blog/jekyll-alternative-without-ruby.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .article-content h2{font-size:1.9rem;margin-top:3rem;margin-bottom:1rem;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1A1F36;letter-spacing:-.02em;}
+    .article-content p{margin-bottom:1.5rem;font-size:1.1rem;color:#4F566B;line-height:1.8;}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:1.5rem;}
+    .article-content li{margin-bottom:.5rem;font-size:1.1rem;color:#4F566B;line-height:1.7;}
+    .article-content strong{color:#1A1F36;}
+    .article-header{border-bottom:1px solid #E3E8EE;padding-bottom:2rem;margin-bottom:3rem;}
+    .author-meta{display:flex;align-items:center;gap:1rem;margin-top:2rem;}
+    .inline-cta{background:linear-gradient(135deg,#0E9E6E,#059669);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:3rem 0;}
+    .inline-cta h3{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#fff;margin-bottom:.75rem;}
+    .inline-cta p{color:rgba(255,255,255,.9);font-size:1rem;margin-bottom:1.5rem;}
+    .inline-cta a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#0E9E6E;font-weight:700;font-size:1rem;padding:.8rem 1.75rem;border-radius:99px;text-decoration:none;}
+    .inline-cta small{display:block;color:rgba(255,255,255,.75);font-size:.82rem;margin-top:.75rem;}
+    code{font-family:'SF Mono','Fira Code',monospace;font-size:.875em;background:#F0EFFF;color:#635BFF;padding:.15em .45em;border-radius:4px;}
+  </style>
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-content">
+      <a href="../index.html" class="logo" style="text-decoration:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a>
+      <div class="nav-links"><a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a><a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a></div>
+    </div>
+  </header>
+  <main class="blog-article-main">
+    <article class="container section-padding" style="max-width:800px;padding-top:0;">
+      <header class="article-header fade-up">
+        <span style="font-size:.9rem;color:#635BFF;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Tooling</span>
+        <h1 style="margin-top:1rem;margin-bottom:1rem;font-size:clamp(1.8rem,5vw,2.5rem);">Jekyll Is Dead Weight: How Developers Are Blogging Without Ruby in 2025</h1>
+        <p style="font-size:1.2rem;color:#4F566B;max-width:700px;line-height:1.6;">Jekyll still powers millions of GitHub Pages blogs — but the developer experience of setting it up is genuinely hostile to people whose goal is to write, not configure a build system.</p>
+        <div class="author-meta">
+          <div style="width:48px;height:48px;border-radius:50%;background:#635BFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem;">A</div>
+          <div><div style="font-weight:600;color:#1A1F36;">Akhil K Thomas</div><div style="font-size:.9rem;color:#8898AA;">Published April 4, 2026 · 7 min read</div></div>
+        </div>
+      </header>
+      <div class="article-content fade-up delay-1">
+        <p>Jekyll was released in 2008. It was innovative — a static site generator that worked natively with GitHub Pages. In 2008, if you wanted a developer blog, you either ran WordPress on a VPS or you built your own system. Jekyll was a genuine breakthrough.</p>
+        <p>Seventeen years later, Jekyll's core architecture hasn't changed. It still requires Ruby. It still requires Bundler. It still uses Liquid templates. And it's still the default tool that GitHub recommends for Pages — largely due to institutional inertia, not because it's the best option available in 2025.</p>
+
+        <h2>The Ruby Problem Is Real</h2>
+        <p>If you're on macOS Sequoia and you try to set up a Jekyll blog from scratch, here's what's likely to happen: macOS ships with a system Ruby that is explicitly not meant for user applications. You'll need to install <code>rbenv</code> or <code>rvm</code> to manage Ruby versions. You'll install a Jekyll-compatible version of Ruby. You'll run <code>gem install bundler jekyll</code>. Then a gem dependency will conflict with a native extension, and you'll spend 45 minutes on Stack Overflow.</p>
+        <p>This is not a hypothetical. It's the consistent experience documented in dozens of "how to set up Jekyll" forum threads every year. The friction barrier is real, and it disproportionately affects people who simply want to blog — not people who want to learn Ruby dependency management.</p>
+
+        <h2>The Liquid Template Trap</h2>
+        <p>Once you've survived the Ruby setup, you have to maintain Jekyll's Liquid templating system. Liquid is a templating language designed to be sandboxed and secure. It's also extremely unforgiving: an unclosed tag in a layout file silently breaks every page that extends it. A configuration error in <code>_config.yml</code> prevents the build from running entirely.</p>
+        <p>For a personal blog with 12 posts, this complexity overhead is architectural overkill. You don't need a templating system. You need a write → publish loop.</p>
+
+        <h2>The CI Pipeline Maintenance Tax</h2>
+        <p>Modern GitHub Pages deployments typically require a <code>.github/workflows/</code> YAML file to run the Jekyll build and deploy. That file requires maintenance. GitHub Actions versions change. Runner images update. Jekyll versions update. Each of these can silently break your deploy — and you'll find out when a reader tells you your blog is showing a 404.</p>
+        <p>This is overhead that a 10-post blog about your side projects simply does not justify.</p>
+
+        <h2>What Developers Are Using Instead</h2>
+        <p>The clearest alternative for developers who want Jekyll's output — static HTML on GitHub Pages — without Jekyll's setup complexity, is a tool that handles the build layer invisibly.</p>
+        <p>Thooval does exactly this. It's a native macOS app that:</p>
+        <ul>
+          <li>Provides a WYSIWYG Markdown editor (live rendering — no raw syntax)</li>
+          <li>Builds clean static HTML from your posts locally</li>
+          <li>Pushes directly to your GitHub Pages repository via a Personal Access Token</li>
+          <li>Requires zero terminal commands — ever, including for every subsequent publish</li>
+        </ul>
+        <p>The output is the same as Jekyll: static HTML on GitHub Pages. The process is write → click Publish — instead of write → fix Ruby → build → commit → push → wait for CI.</p>
+
+        <div class="inline-cta">
+          <h3>Get Jekyll's output without Jekyll's setup.</h3>
+          <p>Thooval publishes clean static HTML to GitHub Pages directly from your Mac. No Ruby. No terminal. </p>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for macOS</a>
+          <small>macOS 12+ · Free and Open Source · No subscriptions</small>
+        </div>
+
+        <h2>When Jekyll Still Makes Sense</h2>
+        <p>Jekyll isn't obsolete for every use case. If you're building a documentation site with deep customization needs — custom themes, plugins, complex taxonomies — Jekyll's templating power is genuine. If you're a Ruby developer who's comfortable in the ecosystem, the tooling feels natural.</p>
+        <p>But for a personal blog focused on writing? Jekyll's overhead-to-value ratio is deeply unfavorable in 2025. The ecosystem has moved on — and so have the developers who just want to write.</p>
+        <p>See the full <a href="../alternatives/jekyll-alternative/index.html" style="color:#635BFF;font-weight:500;">Jekyll alternative comparison →</a></p>
+      </div>
+    </article>
+  </main>
+  <footer class="footer"><div class="container footer-container"><div class="footer-brand"><a href="../index.html" class="logo" style="text-decoration:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a><p class="made-in">Crafted with care in Kochi, India.</p></div><div class="footer-links"><a href="index.html" class="social-link" style="margin-right:1rem;"><span>Blog Home</span></a><a href="../alternatives/jekyll-alternative/index.html" class="social-link" style="margin-right:1rem;"><span>Jekyll Alternative</span></a><a href="../terms.html" class="social-link" style="margin-left:1rem;"><span>Terms</span></a></div></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

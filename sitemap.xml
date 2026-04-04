@@ -1,135 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/index.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/help.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/refund.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+
+  <!-- Alternatives Hub -->
+  <url>
+    <loc>https://thooval.ink/alternatives/</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://thooval.ink/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- SEO-targeted blog posts (new) -->
+  <url>
+    <loc>https://thooval.ink/blog/ghost-vs-github-pages-cost.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/blog/github-pages-blog-no-terminal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/blog/jekyll-alternative-without-ruby.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/local-first-future-of-writing.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/giscus-github-pages-setup.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/mac-minimalist-markdown-editors.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/best-markdown-editors-macos-blog.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Existing blog posts -->
+  <url>
+    <loc>https://thooval.ink/blog/local-first-future-of-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/markdown-vs-wysiwyg-writers.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/mac-minimalist-markdown-editors.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/digital-minimalism-for-writers.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/markdown-vs-wysiwyg-writers.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/static-site-generator-for-blog.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/digital-minimalism-for-writers.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/creator-economy-own-your-platform.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/static-site-generator-for-blog.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/markdown-cheat-sheet-for-writers.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/creator-economy-own-your-platform.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/migrating-from-notion-to-local-files.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/markdown-cheat-sheet-for-writers.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/building-a-daily-writing-habit.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/migrating-from-notion-to-local-files.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/the-problem-with-cloud-syncing-apps.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/building-a-daily-writing-habit.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/why-every-indie-dev-needs-a-blog.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/the-problem-with-cloud-syncing-apps.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/technical-writing-without-the-setup.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/why-every-indie-dev-needs-a-blog.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/solopreneur-content-stack-static-sites.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/technical-writing-without-the-setup.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/building-in-public-fast-updates.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/solopreneur-content-stack-static-sites.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/version-control-your-writing-with-git.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/building-in-public-fast-updates.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/the-myth-of-the-10x-developer.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/version-control-your-writing-with-git.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/marketing-for-developers-who-hate-marketing.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/the-myth-of-the-10x-developer.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/why-i-stopped-using-wordpress.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/marketing-for-developers-who-hate-marketing.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/documenting-your-startup-journey.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/why-i-stopped-using-wordpress.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
-    <loc>https://akhil-k-thomas.github.io/thooval/blog/the-best-tools-for-solopreneurs.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://thooval.ink/blog/documenting-your-startup-journey.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
+  <url>
+    <loc>https://thooval.ink/blog/the-best-tools-for-solopreneurs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+
+  <!-- Alternative pages -->
+  <url>
+    <loc>https://thooval.ink/alternatives/ghost-alternative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/alternatives/jekyll-alternative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/alternatives/hashnode-alternative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/alternatives/medium-alternative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/alternatives/wordpress-alternative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Use case pages -->
+  <url>
+    <loc>https://thooval.ink/use-cases/github-pages-blog/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/use-cases/markdown-blogging-macos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://thooval.ink/use-cases/developer-personal-blog/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
 </urlset>
