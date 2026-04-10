@@ -5,7 +5,7 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Add Giscus Comments to a GitHub Pages Blog | Thooval Blog</title>
-  <meta name="description" content="A step-by-step guide to adding Giscus comments to a GitHub Pages blog using GitHub Discussions. Includes the easy route and the manual route — and when to use each.">
+  <meta name="description" content="A step-by-step guide to adding Giscus comments to a GitHub Pages blog using GitHub Discussions. Includes the easy route and the manual route and when to use each.">
   <meta name="keywords" content="giscus github pages setup, add giscus to github pages, giscus comments tutorial, github discussions comments static site, giscus setup guide">
   <link rel="canonical" href="https://thooval.ink/blog/giscus-github-pages-setup.html">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
   <header class="navbar scrolled">
     <div class="container nav-content">
       <a href="../index.html" class="logo" style="text-decoration:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a>
-      <div class="nav-links"><a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a><a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a></div>
+      <div class="nav-links"><a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a><a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" class="nav-cta">Buy License $15</a></div>
     </div>
   </header>
   <main class="blog-article-main">
@@ -46,14 +46,14 @@
       <header class="article-header fade-up">
         <span style="font-size:.9rem;color:#635BFF;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Tutorial</span>
         <h1 style="margin-top:1rem;margin-bottom:1rem;font-size:clamp(1.8rem,5vw,2.5rem);">How to Add Giscus Comments to a GitHub Pages Blog</h1>
-        <p style="font-size:1.2rem;color:#4F566B;max-width:700px;line-height:1.6;">Giscus uses GitHub Discussions as its backend — no third-party accounts, no spam filters to configure, no Disqus tracking scripts. Here's exactly how to add it to your GitHub Pages blog.</p>
+        <p style="font-size:1.2rem;color:#4F566B;max-width:700px;line-height:1.6;">Giscus uses GitHub Discussions as its backend no third-party accounts, no spam filters to configure, no Disqus tracking scripts. Here's exactly how to add it to your GitHub Pages blog.</p>
         <div class="author-meta">
           <div style="width:48px;height:48px;border-radius:50%;background:#635BFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem;">A</div>
           <div><div style="font-weight:600;color:#1A1F36;">Akhil K Thomas</div><div style="font-size:.9rem;color:#8898AA;">Published April 4, 2026 · 6 min read</div></div>
         </div>
       </header>
       <div class="article-content fade-up delay-1">
-        <p>Static sites have a comments problem. You can't run server-side code, so you can't store comments in a database. The traditional solution — Disqus — works, but it's heavy, slow, and embeds third-party tracking into every page.</p>
+        <p>Static sites have a comments problem. You can't run server-side code, so you can't store comments in a database. The traditional solution Disqus works, but it's heavy, slow, and embeds third-party tracking into every page.</p>
         <p>Giscus solves this elegantly for developer blogs: it stores comments in your GitHub repository's Discussions, renders them via the GitHub API, and authenticates readers through their existing GitHub accounts. No new service to sign up for. No data leaving your repository.</p>
 
         <h2>Prerequisites</h2>
@@ -83,16 +83,19 @@
   async&gt;
 &lt;/script&gt;</code></pre>
 
-        <p>The <code>data-repo-id</code> and <code>data-category-id</code> values are generated automatically by giscus.app — you don't need to look them up manually.</p>
+        <p>The <code>data-repo-id</code> and <code>data-category-id</code> values are generated automatically by giscus.app you don't need to look them up manually.</p>
 
         <h2>Verify it's working</h2>
-        <p>After pushing, open a blog post in a private/incognito window. You should see a Giscus comments widget at the bottom of the page. Sign in with GitHub to post a test comment. Check your repository's Discussions tab — the comment should appear there.</p>
+        <p>After pushing, open a blog post in a private/incognito window. You should see a Giscus comments widget at the bottom of the page. Sign in with GitHub to post a test comment. Check your repository's Discussions tab the comment should appear there.</p>
 
         <div class="inline-cta">
           <h3>Giscus is built into Thooval.</h3>
-          <p>If you're setting up a new GitHub Pages blog, Thooval embeds Giscus with a single settings toggle — no script copying required. </p>
-          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for macOS</a>
-          <small>macOS 12+ · Free and Open Source · No subscriptions</small>
+          <p>If you're setting up a new GitHub Pages blog, Thooval embeds Giscus with a single settings toggle. Try it free for 7 days, then pay $15 once.</p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" style="background: #fff; color: #0E9E6E;">Buy Lifetime License $15</a>
+            <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" style="background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.4);">Download 7-day Trial</a>
+          </div>
+          <small>macOS 12+ · $15 One-time · No subscriptions</small>
         </div>
 
         <h2>Common Issues</h2>
@@ -101,10 +104,10 @@
         <h3>Wrong discussion category</h3>
         <p>Giscus requires a specific Discussions category to work. When setting up on giscus.app, make sure the category you select actually exists in your repository's Discussions → Categories list.</p>
         <h3>Comments appear on all posts the same</h3>
-        <p>This happens when <code>data-mapping</code> is set to "pathname" but your pages all share the same pathname. Change the mapping to "url" or "title" in your Giscus script — and update the embed code on your pages.</p>
+        <p>This happens when <code>data-mapping</code> is set to "pathname" but your pages all share the same pathname. Change the mapping to "url" or "title" in your Giscus script and update the embed code on your pages.</p>
 
         <h2>Why Giscus Over Disqus</h2>
-        <p>Disqus works — but it slows your pages down significantly (it loads a large JavaScript bundle) and embeds cross-site tracking across every page where it's installed. Giscus is lightweight, privacy-respecting, and keeps all comment data in your own GitHub repository. For a developer blog, it's the clear choice.</p>
+        <p>Disqus works but it slows your pages down significantly (it loads a large JavaScript bundle) and embeds cross-site tracking across every page where it's installed. Giscus is lightweight, privacy-respecting, and keeps all comment data in your own GitHub repository. For a developer blog, it's the clear choice.</p>
       </div>
     </article>
   </main>

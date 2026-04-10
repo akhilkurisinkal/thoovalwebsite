@@ -4,14 +4,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKP840CDJS');</script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Pages Blog Setup Without a Terminal — Under 5 Minutes | Thooval Blog</title>
-  <meta name="description" content="How to set up a GitHub Pages blog in under 5 minutes — no terminal, no Ruby, no CI pipelines. A step-by-step guide for developers who want a blog, not a build system.">
+  <title>GitHub Pages Blog Setup Without a Terminal Under 5 Minutes | Thooval Blog</title>
+  <meta name="description" content="How to set up a GitHub Pages blog in under 5 minutes no terminal, no Ruby, no CI pipelines. A step-by-step guide for developers who want a blog, not a build system.">
   <meta name="keywords" content="github pages blog setup no terminal, how to set up github pages blog, github pages blog without command line, github pages blog for beginners">
   <link rel="canonical" href="https://thooval.ink/blog/github-pages-blog-no-terminal.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://thooval.ink/blog/github-pages-blog-no-terminal.html">
-  <meta property="og:title" content="GitHub Pages Blog Setup Without a Terminal — Under 5 Minutes">
-  <meta property="og:description" content="Set up a GitHub Pages blog in under 5 minutes — no terminal, no Ruby, no CI pipelines required.">
+  <meta property="og:title" content="GitHub Pages Blog Setup Without a Terminal Under 5 Minutes">
+  <meta property="og:description" content="Set up a GitHub Pages blog in under 5 minutes no terminal, no Ruby, no CI pipelines required.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
       <a href="../index.html" class="logo" style="text-decoration:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg><span>Thooval</span></a>
       <div class="nav-links">
         <a href="index.html" class="nav-link" style="font-weight:500;color:#4F566B;">More Articles</a>
-        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta">Download Free ↓</a>
+        <a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" class="nav-cta">Buy License $15</a>
       </div>
     </div>
   </header>
@@ -62,7 +62,7 @@
       <div class="article-content fade-up delay-1">
         <p>GitHub Pages has always been the best free hosting option for developer blogs. A public GitHub repository, served as a static website, with a free <code>username.github.io</code> domain and support for custom domains. It's fast, indexed by search engines, and runs indefinitely at zero cost.</p>
         <p>The problem has always been the setup. GitHub Pages was designed to work with Jekyll, which requires Ruby, Bundler, and a functioning terminal environment. One wrong Ruby version and your entire build breaks before you've written a single word.</p>
-        <p>This guide shows you how to get a GitHub Pages blog live in under 5 minutes — with no terminal, no Ruby, and no CI pipeline configuration.</p>
+        <p>This guide shows you how to get a GitHub Pages blog live in under 5 minutes with no terminal, no Ruby, and no CI pipeline configuration.</p>
 
         <h2>The Traditional Jekyll Route (Skip This)</h2>
         <p>For historical context, here's what setting up a Jekyll + GitHub Pages blog used to require:</p>
@@ -75,36 +75,36 @@
           <li>Run <code>bundle exec jekyll serve</code> to preview</li>
           <li>Fix whatever Liquid template error appeared</li>
           <li>Run <code>bundle exec jekyll build</code></li>
-          <li>Commit and push — then wait for GitHub Actions to deploy</li>
+          <li>Commit and push then wait for GitHub Actions to deploy</li>
         </ol>
         <p>That's 9 steps before your blog is live, and steps 1–4 alone can take an hour the first time. If you're on macOS and your system Ruby conflicts with the Jekyll-required version, add two more hours of debugging.</p>
 
         <h2>The No-Terminal Route (Do This Instead)</h2>
-        <p>The approach below uses <strong>Thooval</strong>, a native macOS app that handles everything the Jekyll + CI pipeline used to do — from within a clean desktop interface. Here's the full setup:</p>
+        <p>The approach below uses <strong>Thooval</strong>, a native macOS app that handles everything the Jekyll + CI pipeline used to do from within a clean desktop interface. Here's the full setup:</p>
 
         <div class="step-box"><h3><span class="step-num-badge">1</span>Create a GitHub repository</h3><p>Go to github.com → New repository. Name it anything (e.g., <code>my-blog</code>). Set it to Public. Click "Create repository." This takes 60 seconds.</p></div>
         <div class="step-box"><h3><span class="step-num-badge">2</span>Enable GitHub Pages</h3><p>In the repo, go to Settings → Pages. Set "Source" to "Deploy from a branch," select <code>main</code>, and save. GitHub Pages is now enabled for this repo.</p></div>
-        <div class="step-box"><h3><span class="step-num-badge">3</span>Generate a Personal Access Token</h3><p>Go to GitHub Settings → Developer Settings → Personal Access Tokens → Tokens (classic). Generate a token with <code>repo</code> scope. Copy it — you only see it once.</p></div>
-        <div class="step-box"><h3><span class="step-num-badge">4</span>Connect Thooval to your repo</h3><p>Download and open Thooval. In Settings, paste your GitHub username, repo name, and Personal Access Token. Thooval connects to your repo. That's the only technical step — and you only do it once.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">3</span>Generate a Personal Access Token</h3><p>Go to GitHub Settings → Developer Settings → Personal Access Tokens → Tokens (classic). Generate a token with <code>repo</code> scope. Copy it you only see it once.</p></div>
+        <div class="step-box"><h3><span class="step-num-badge">4</span>Connect Thooval to your repo</h3><p>Download and open Thooval. In Settings, paste your GitHub username, repo name, and Personal Access Token. Thooval connects to your repo. That's the only technical step and you only do it once.</p></div>
         <div class="step-box"><h3><span class="step-num-badge">5</span>Write your first post and click Publish</h3><p>Create a new post in Thooval's WYSIWYG editor. Write anything. Click <strong>Publish</strong>. Thooval builds the HTML and pushes it directly to your GitHub Pages repo. Your blog is live at <code>username.github.io/my-blog</code>.</p></div>
 
         <p>Total time from "create a GitHub repo" to "blog is live": under 5 minutes on a fresh setup. Under 30 seconds for every subsequent post.</p>
 
         <div class="inline-cta">
-          <h3>Try this right now — for free.</h3>
-          <p>Thooval's Thooval is 100% free and open source. Download, connect GitHub, and publish your first post today.</p>
-          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for macOS</a>
-          <small>macOS 12+ · Free and Open Source · No subscriptions</small>
+          <h3>Try this right now for free.</h3>
+          <p>Try Thooval for 7 individual days. One single payment of $15 for a lifetime license.</p>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download 7-day Trial</a>
+          <small>macOS 12+ · $15 One-time · No subscriptions</small>
         </div>
 
         <h2>What About Custom Domains?</h2>
         <p>GitHub Pages supports custom domains natively. Go to your repo's Settings → Pages → Custom domain. Enter your domain (e.g., <code>blog.yourdomain.com</code>). Then add a CNAME record at your DNS provider pointing to <code>username.github.io</code>. GitHub handles the SSL certificate automatically via Let's Encrypt.</p>
 
         <h2>Adding Comments to Your Blog</h2>
-        <p>Static sites can't run server-side code — so traditional comment systems don't work. Thooval has Giscus built in: a comments system powered by GitHub Discussions. Your readers authenticate with GitHub (which most developers already have), and comments are stored in your repository's Discussions tab — no third-party service required.</p>
+        <p>Static sites can't run server-side code so traditional comment systems don't work. Thooval has Giscus built in: a comments system powered by GitHub Discussions. Your readers authenticate with GitHub (which most developers already have), and comments are stored in your repository's Discussions tab no third-party service required.</p>
 
         <h2>The Result</h2>
-        <p>You get a fast, SEO-friendly, static HTML blog hosted on GitHub Pages — free, forever — with no monthly bills, no server maintenance, and no terminal. Every post is a <code>.md</code> file on your Mac. Your blog is a git repository you fully control.</p>
+        <p>You get a fast, SEO-friendly, static HTML blog hosted on GitHub Pages free, forever with no monthly bills, no server maintenance, and no terminal. Every post is a <code>.md</code> file on your Mac. Your blog is a git repository you fully control.</p>
         <p>For a <a href="../alternatives/jekyll-alternative/index.html" style="color:#635BFF;font-weight:500;">full comparison with the traditional Jekyll approach →</a></p>
       </div>
     </article>

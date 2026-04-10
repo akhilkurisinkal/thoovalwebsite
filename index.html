@@ -169,6 +169,19 @@
 
     .nav-links a:hover { color: var(--ink); }
 
+    .nav-links a.nav-buy {
+      color: #fff;
+      padding: 0.62rem 1.25rem;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(99, 91, 255, 0.18);
+    }
+
+    .nav-links a.nav-buy:hover {
+      color: #fff;
+      background: var(--accent-strong);
+      transform: translateY(-1px);
+    }
+
     .cta {
       display: inline-flex;
       align-items: center;
@@ -300,69 +313,76 @@
       position: relative;
     }
 
-    .visual-card {
-      background: #121725;
-      border: 1px solid rgba(78, 88, 120, 0.72);
-      border-radius: 26px;
-      padding: 0.7rem;
+    .hero-screenshot {
+      border-radius: 8px;
+      overflow: hidden;
       box-shadow: 0 28px 60px rgba(26, 31, 54, 0.22);
-      overflow: hidden;
+      display: block;
+      width: 100%;
     }
 
-    .visual-top {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      min-height: 14px;
-      padding: 0.2rem 0.3rem 0.5rem;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 0.45rem;
-    }
-
-    .window-dots span {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--line);
-    }
-
-    .window-dots span:first-child { background: #ff5f57; }
-    .window-dots span:nth-child(2) { background: #ffbd2e; }
-    .window-dots span:last-child { background: #28c941; }
-
-    .screenshot {
-      border-radius: 18px;
-      border: 1px solid rgba(78, 88, 120, 0.58);
-      overflow: hidden;
-      background: #0d1320;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    .hero-screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .floating-stats {
       position: absolute;
-      right: -0.35rem;
-      bottom: 1rem;
-      width: min(260px, 72%);
-      background: rgba(26, 31, 54, 0.96);
+      right: -1.2rem;
+      bottom: 2rem;
+      width: 210px;
+      background: rgba(26, 31, 54, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #f6f9fc;
-      border-radius: 22px;
-      padding: 1rem 1.05rem;
-      box-shadow: 0 20px 40px rgba(26, 31, 54, 0.18);
+      border-radius: 20px;
+      padding: 0.9rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      animation: float 6s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #28c941;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(40, 201, 65, 0.4);
+      animation: pulse 2s infinite;
     }
 
     .floating-stats strong {
       display: block;
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
     }
 
     .floating-stats p {
-      color: rgba(246, 249, 252, 0.78);
-      font-size: 0.9rem;
-      line-height: 1.55;
+      color: rgba(246, 249, 252, 0.72);
+      font-size: 0.82rem;
+      line-height: 1.4;
+      margin-top: 0.2rem;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(40, 201, 65, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(40, 201, 65, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(40, 201, 65, 0); }
     }
 
     .proof-strip {
@@ -708,7 +728,7 @@
         <a href="#features">Features</a>
         <a href="#fit">Who it's for</a>
         <a href="blog/index.html">Guides</a>
-        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary nav-buy">Buy for $15</a>
+        <a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" class="cta cta-primary nav-buy">Buy License $15</a>
       </div>
     </div>
   </nav>
@@ -723,8 +743,8 @@
         <h1>A better way to write and publish your blog.</h1>
         <p class="hero-copy">Thooval gives you a Typora-like Markdown editor with a real publish button. Write locally, keep your posts as plain <code>.md</code> files, and push straight to GitHub Pages without Jekyll, CI pipelines, or CMS overhead.</p>
         <div class="hero-actions">
-          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary">Buy and download</a>
-          <a href="alternatives/typora-alternative/index.html" class="cta cta-secondary">See the Typora comparison</a>
+          <a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" class="cta cta-primary">Buy Lifetime License $15</a>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-secondary">Download 7-day Trial</a>
         </div>
         <div class="hero-meta">
           <span>macOS 12+</span>
@@ -744,21 +764,15 @@
       </div>
 
       <div class="hero-visual">
-        <div class="visual-card">
-          <div class="visual-top">
-            <div class="window-dots" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div class="screenshot">
-            <img src="assets/thooval_editor_mockup.png" alt="Thooval editor screenshot">
-          </div>
+        <div class="hero-screenshot">
+          <img src="assets/thooval_editor_mockup.png" alt="Thooval editor">
         </div>
         <div class="floating-stats">
-          <strong>The core promise is simple.</strong>
-          <p>Great writing apps usually stop at the draft. Great publishing stacks usually feel like infrastructure. Thooval sits in the middle.</p>
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <strong>Publishing live...</strong>
+          </div>
+          <p>One click to GitHub Pages, zero friction from draft to production.</p>
         </div>
       </div>
     </div>
@@ -900,19 +914,23 @@
 
       <aside class="pricing-card" id="pricing">
         <div class="section-kicker">Pricing</div>
-        <h3>One purchase. No recurring software bill.</h3>
+        <h3>Try for free. Own it forever.</h3>
         <div class="price">
           <small>$</small>
           <strong>15</strong>
         </div>
-        <p class="pricing-note">GitHub Pages hosting remains free. Thooval is the app layer, not another monthly platform.</p>
+        <p class="pricing-note">Full-featured 7-day trial available. No credit card required to start writing.</p>
         <ul class="pricing-list">
           <li>Live Markdown editor</li>
           <li>GitHub Pages publishing</li>
           <li>Local file ownership</li>
+          <li><b>7-day free trial included</b></li>
           <li>All future updates included</li>
         </ul>
-        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary" style="width: 100%;">Buy and download</a>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <a href="https://thooval.lemonsqueezy.com/checkout/buy/thooval" class="cta cta-primary" style="width: 100%;">Buy Lifetime License</a>
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-secondary" style="width: 100%;">Download Free Trial</a>
+        </div>
       </aside>
     </div>
   </section>
