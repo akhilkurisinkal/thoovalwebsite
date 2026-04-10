@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKP840CDJS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,24 +11,22 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thooval — Free & Open Source macOS Markdown Editor</title>
-  <meta name="description" content="Thooval is a free, open-source macOS app that lets you write in a live Markdown editor and publish directly to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees.">
-  <meta name="keywords" content="macOS markdown editor GitHub Pages, markdown blog editor mac, open source github pages app, static site generator no terminal, ghost alternative free, jekyll alternative without ruby">
+  <title>Thooval - GitHub Pages Blog App for Mac</title>
+  <meta name="description" content="The easiest way to run a GitHub Pages blog on macOS. Write in a Typora-style Markdown editor and publish in one click. No Jekyll. No CI. $15 one-time.">
+  <meta name="keywords" content="github pages blog app mac, typora alternative mac publish blog, github pages editor macos, markdown blog app mac, jekyll alternative mac">
   <link rel="canonical" href="https://thooval.ink/">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thooval.ink/">
-  <meta property="og:title" content="Thooval — Free & Open Source macOS Markdown Editor">
-  <meta property="og:description" content="Write in a live Markdown editor. Publish to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees. 100% free and open source.">
+  <meta property="og:title" content="Thooval - GitHub Pages Blog App for Mac">
+  <meta property="og:description" content="Write in a live WYSIWYG editor and publish to GitHub Pages in one click. No Jekyll. No CI. No monthly fees. $15 one-time.">
+  <meta property="og:image" content="https://thooval.ink/assets/thooval_editor_mockup.png">
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://thooval.ink/">
-  <meta property="twitter:title" content="Thooval — Free & Open Source macOS Markdown Editor">
-  <meta property="twitter:description" content="Write in a live Markdown editor. Publish to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees. 100% free and open source.">
+  <meta property="twitter:title" content="Thooval - GitHub Pages Blog App for Mac">
+  <meta property="twitter:description" content="Write in a live WYSIWYG editor and publish to GitHub Pages in one click. No Jekyll. No CI. No monthly fees. $15 one-time.">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,10 +36,10 @@
     "applicationCategory": "TextEditor",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "15",
       "priceCurrency": "USD"
     },
-    "description": "Thooval is a free and open source macOS Markdown editor that publishes directly to GitHub Pages in one click. No terminal, no CI/CD, no monthly fees.",
+    "description": "Thooval is a macOS app for running a GitHub Pages blog with a live WYSIWYG Markdown editor and one-click publishing. $15 one-time.",
     "author": {
       "@type": "Person",
       "name": "Akhil K Thomas"
@@ -50,1084 +47,900 @@
   }
   </script>
 
-  <!-- Google Fonts: Inter (body/UI) + Playfair Display (headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ===========================
-       STRIPE LIGHT MODE IDENTITY
-    =========================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #FFFFFF;
-      --bg-light:     #F6F9FC;
-      --bg-card:      #FFFFFF;
-      --text:         #1A1F36;
-      --text-muted:   #4F566B;
-      --text-dim:     #8898AA;
-      --border:       #E3E8EE;
-      --brand:        #635BFF;
-      --brand-hover:  #5851DF;
-      --brand-light:  #F0EFFF;
-      --brand-accent: #00D4FF;
-      --green:        #0E9E6E;
-      --green-light:  #D1FAE5;
-      --red-light:    #FEE2E2;
-      --red:          #DC2626;
-
-      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-serif:   'Playfair Display', Georgia, serif;
-      --font-mono:    'SF Mono', 'Fira Code', 'Fira Mono', monospace;
-
-      --radius-sm:    8px;
-      --radius-md:    12px;
-      --radius-lg:    24px;
-      --radius-pill:  99px;
-      --max-w:        1200px;
-      --shadow-sm:    0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md:    0 7px 14px rgba(50,50,93,0.1), 0 3px 6px rgba(0,0,0,0.08);
-      --shadow-lg:    0 20px 40px -10px rgba(99,91,255,0.12);
+      --bg: #ffffff;
+      --paper: #ffffff;
+      --paper-soft: #f6f9fc;
+      --ink: #1a1f36;
+      --muted: #4f566b;
+      --line: #e3e8ee;
+      --accent: #635bff;
+      --accent-strong: #5851df;
+      --accent-soft: #f0efff;
+      --warm: #00d4ff;
+      --warm-soft: #eefbff;
+      --danger-soft: #fee2e2;
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-pill: 999px;
+      --shadow-sm: 0 10px 24px rgba(40, 30, 10, 0.08);
+      --shadow-lg: 0 24px 60px rgba(40, 30, 10, 0.12);
+      --max-w: 1180px;
+      --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Fraunces', Georgia, serif;
     }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(99, 91, 255, 0.08), transparent 32%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.08), transparent 28%),
+        var(--bg);
+      color: var(--ink);
       font-family: var(--font-sans);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       font-family: var(--font-serif);
       font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
     }
 
-    p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; }
-
+    p { color: var(--muted); }
     code {
-      font-family: var(--font-mono);
-      font-size: 0.875em;
-      background: var(--brand-light);
-      color: var(--brand);
-      padding: 0.15em 0.45em;
-      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: var(--paper-soft);
+      color: var(--accent-strong);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.9em;
     }
 
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    .container { width: min(var(--max-w), calc(100% - 2.5rem)); margin: 0 auto; }
 
-    /* ===========================
-       SCROLL REVEAL
-    =========================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.delay-1 { transition-delay: 0.1s; }
-    .reveal.delay-2 { transition-delay: 0.2s; }
-    .reveal.delay-3 { transition-delay: 0.3s; }
-    .reveal.visible  { opacity: 1; transform: none; }
-
-    /* ===========================
-       NAV
-    =========================== */
     .nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.84);
+      border-bottom: 1px solid rgba(227, 232, 238, 0.85);
     }
-    .nav.scrolled {
-      border-color: var(--border);
-      box-shadow: 0 2px 12px rgba(50,50,93,0.06);
-    }
+
     .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      width: 100%;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.5rem;
     }
-    .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
+
+    .brand {
+      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.7rem;
+      font-weight: 800;
+      color: var(--ink);
     }
-    .nav-logo svg { color: var(--brand); }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft));
+      border: 1px solid rgba(99, 91, 255, 0.12);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand span {
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      font-weight: 600 !important;
-      font-size: 0.9rem !important;
-      background: var(--brand);
-      color: #fff !important;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease !important;
-    }
-    .nav-cta:hover { background: var(--brand-hover) !important; transform: translateY(-1px); box-shadow: var(--shadow-md) !important; }
 
-    /* ===========================
-       BUTTONS
-    =========================== */
-    .btn-primary {
+    .nav-links a {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .cta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.6rem;
-      background: var(--brand);
-      color: #fff;
-      font-family: var(--font-sans);
-      font-size: 1.05rem;
-      font-weight: 600;
-      padding: 0.9rem 2rem;
+      padding: 0.95rem 1.45rem;
       border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease;
-    }
-    .btn-primary:hover {
-      background: var(--brand-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
+      font-size: 0.97rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 0.3rem 1rem;
-      background: var(--brand-light);
-      color: var(--brand);
+    .cta-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(99, 91, 255, 0.22);
+    }
+
+    .cta-primary:hover {
+      background: var(--accent-strong);
+      transform: translateY(-2px);
+    }
+
+    .cta-secondary {
+      background: rgba(255, 253, 248, 0.82);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-shell {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.85rem;
       border-radius: var(--radius-pill);
-      font-size: 0.78rem;
-      font-weight: 700;
+      border: 1px solid rgba(99, 91, 255, 0.16);
+      background: rgba(255, 255, 255, 0.82);
+      font-size: 0.76rem;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      border: 1px solid rgba(99,91,255,0.12);
+      color: var(--accent-strong);
+      margin-bottom: 1.3rem;
     }
 
-    /* ===========================
-       HERO
-    =========================== */
-    .hero {
-      padding: 8rem 1.5rem 5rem;
-      text-align: center;
-      background: radial-gradient(circle at 10% 20%, rgba(99,91,255,0.04) 0%, #fff 80%);
-      border-bottom: 1px solid var(--border);
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warm);
     }
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.45rem);
+      margin-bottom: 1.2rem;
+      max-width: 11ch;
+    }
+
+    .hero-copy {
+      font-size: 1.12rem;
+      max-width: 60ch;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1.2rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-note {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      text-align: left;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    .hero-h1 em {
-      font-style: italic;
-      color: var(--brand);
-    }
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 500px;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
-    .hero-sub strong { color: var(--text); }
-    .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .hero-trust {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      font-weight: 500;
-    }
-    .hero-mockup-col { display: flex; justify-content: center; }
-    .hero-terminal {
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      width: 100%;
-      max-width: 430px;
-      box-shadow: 0 25px 50px -12px rgba(50,50,93,0.12), 0 8px 16px rgba(0,0,0,0.06);
-    }
-    .terminal-bar { display: flex; gap: 6px; margin-bottom: 1.25rem; }
-    .t-dot { width: 12px; height: 12px; border-radius: 50%; }
-    .t-dot.red   { background: #ff5f57; }
-    .t-dot.amber { background: #ffbd2e; }
-    .t-dot.green { background: #28c941; }
-    .terminal-lines { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.9; }
-    .tl-dim   { color: var(--text-dim); }
-    .tl-muted { color: var(--text-muted); }
-    .tl-accent{ color: var(--brand); }
-    .tl-green { color: var(--green); }
-    .tl-text  { color: var(--text); }
-    .cursor {
-      display: inline-block;
-      width: 7px; height: 13px;
-      background: var(--brand);
-      vertical-align: text-bottom;
-      animation: blink 1.1s step-end infinite;
-      margin-left: 2px;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
-    /* ===========================
-       SECTIONS
-    =========================== */
-    .section { padding: 6rem 1.5rem; border-bottom: 1px solid var(--border); }
-    .section-alt { background: var(--bg-light); }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    .section-h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--text);
-      margin-bottom: 1rem;
-      letter-spacing: -0.025em;
-    }
-    .section-h2 em { font-style: italic; color: var(--brand); }
-    .section-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 560px; line-height: 1.8; }
-
-    /* ===========================
-       PROBLEM
-    =========================== */
-    .problem-intro { text-align: center; margin-bottom: 4rem; }
-    .problem-intro .section-sub { margin: 0.75rem auto 0; }
-
-    .problems-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    .problem-item {
-      display: flex;
       gap: 1rem;
-      align-items: flex-start;
-      padding: 1.5rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      transition: all 0.2s ease;
     }
-    .problem-item:hover {
-      border-color: var(--brand);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-    .problem-x {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: var(--red-light);
-      color: var(--red);
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .problem-item h4 { font-family: var(--font-sans); font-size: 0.98rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
-    .problem-item p  { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
 
-    .problem-compare {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 2rem;
-      align-items: start;
-      max-width: 960px;
-      margin: 0 auto;
+    .mini-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.05rem;
     }
-    .problem-col-head {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      padding: 0.35rem 1rem;
-      border-radius: var(--radius-pill);
-      display: inline-block;
+
+    .mini-card strong {
+      display: block;
+      font-size: 0.94rem;
+      margin-bottom: 0.25rem;
     }
-    .col-head-bad  { background: var(--red-light);  color: var(--red);   }
-    .col-head-good { background: var(--green-light); color: var(--green); }
-    .step-list { display: flex; flex-direction: column; gap: 0; }
-    .step-item {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      margin-bottom: 0.1rem;
+
+    .mini-card p {
       font-size: 0.92rem;
-      color: var(--text-muted);
-      background: var(--bg);
+      line-height: 1.6;
     }
-    .step-item.bad  { border-color: #fca5a5; }
-    .step-item.good { border-color: #6ee7b7; background: #f0fdf4; color: var(--text); }
-    .step-item.good.final { border-color: var(--green); background: var(--green-light); font-weight: 600; color: var(--green); }
-    .step-num {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      width: 22px; height: 22px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+
+    .hero-visual {
+      position: relative;
     }
-    .step-arrow { text-align: center; color: var(--text-dim); font-size: 0.8rem; padding: 0.1rem 0; }
-    .step-check { color: var(--green); flex-shrink: 0; }
-    .vs-divider {
+
+    .visual-card {
+      background: #121725;
+      border: 1px solid rgba(78, 88, 120, 0.72);
+      border-radius: 26px;
+      padding: 0.7rem;
+      box-shadow: 0 28px 60px rgba(26, 31, 54, 0.22);
+      overflow: hidden;
+    }
+
+    .visual-top {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding-top: 3rem;
-    }
-    .vs-line { width: 1px; flex: 1; background: var(--border); }
-    .vs-badge {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.5rem;
-      border-radius: var(--radius-sm);
-      margin: 1rem 0;
+      gap: 1rem;
+      min-height: 14px;
+      padding: 0.2rem 0.3rem 0.5rem;
     }
 
-    /* ===========================
-       HOW IT WORKS
-    =========================== */
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 3rem;
+    .window-dots {
+      display: flex;
+      gap: 0.45rem;
     }
-    .how-step { text-align: center; }
-    .how-num-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px; height: 52px;
-      background: var(--brand-light);
-      border: 1px solid rgba(99,91,255,0.15);
-      border-radius: var(--radius-md);
-      color: var(--brand);
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      transition: all 0.2s ease;
-    }
-    .how-step:hover .how-num-icon {
-      background: var(--brand);
-      color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(99,91,255,0.25);
-    }
-    .how-step h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-    .how-step p  { font-size: 0.95rem; max-width: 260px; margin: 0 auto; }
 
-    /* ===========================
-       FEATURES
-    =========================== */
-    .features-intro { margin-bottom: 3.5rem; }
-    .features-grid {
+    .window-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+
+    .window-dots span:first-child { background: #ff5f57; }
+    .window-dots span:nth-child(2) { background: #ffbd2e; }
+    .window-dots span:last-child { background: #28c941; }
+
+    .screenshot {
+      border-radius: 18px;
+      border: 1px solid rgba(78, 88, 120, 0.58);
+      overflow: hidden;
+      background: #0d1320;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .floating-stats {
+      position: absolute;
+      right: -0.35rem;
+      bottom: 1rem;
+      width: min(260px, 72%);
+      background: rgba(26, 31, 54, 0.96);
+      color: #f6f9fc;
+      border-radius: 22px;
+      padding: 1rem 1.05rem;
+      box-shadow: 0 20px 40px rgba(26, 31, 54, 0.18);
+    }
+
+    .floating-stats strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .floating-stats p {
+      color: rgba(246, 249, 252, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .proof-strip {
+      padding: 1rem 0 3.5rem;
+    }
+
+    .proof-panel {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.1rem 1.3rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1rem;
     }
-    .feat-card {
-      padding: 2rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      transition: all 0.2s ease;
+
+    .proof-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
     }
-    .feat-card:hover {
-      border-color: var(--brand);
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px -5px rgba(99,91,255,0.12);
+
+    .proof-item b {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.96rem;
     }
-    .feat-tag {
+
+    .proof-item p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .section {
+      padding: 5.5rem 0;
+      border-top: 1px solid rgba(227, 232, 238, 0.72);
+    }
+
+    .section:first-of-type { border-top: 0; }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-kicker {
       display: inline-block;
-      padding: 0.2rem 0.7rem;
-      background: var(--brand-light);
-      color: var(--brand);
-      border-radius: var(--radius-pill);
-      font-size: 0.68rem;
-      font-weight: 700;
+      margin-bottom: 0.85rem;
+      font-size: 0.77rem;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
-      border: 1px solid rgba(99,91,255,0.1);
+      color: var(--accent-strong);
     }
-    .feat-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px; height: 44px;
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--brand);
-      margin-bottom: 1rem;
-    }
-    .feat-card h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem; }
-    .feat-card p  { font-size: 0.88rem; line-height: 1.7; }
 
-    /* ===========================
-       WHO IT'S FOR
-    =========================== */
-    .for-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .for-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      transition: all 0.2s ease;
-    }
-    .for-card:hover { border-color: var(--brand); box-shadow: var(--shadow-sm); }
-    .for-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 0.75rem;
-    }
-    .for-card blockquote {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.55;
-      margin-bottom: 0.85rem;
-      border-left: 2px solid var(--brand);
-      padding-left: 0.85rem;
-    }
-    .for-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
-
-    /* ===========================
-       PRICING
-    =========================== */
-    .pricing-wrap { max-width: 520px; margin: 0 auto; }
-    .pricing-card {
-      position: relative;
-      background: var(--bg);
-      border: 1.5px solid var(--brand);
-      border-radius: var(--radius-lg);
-      padding: 3.5rem 3rem;
-      text-align: left;
-      box-shadow:
-        0 0 0 4px rgba(99,91,255,0.08),
-        0 20px 40px -10px rgba(99,91,255,0.14);
-      transition: all 0.25s ease;
-    }
-    .pricing-card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 0 0 4px rgba(99,91,255,0.12),
-        0 30px 60px -15px rgba(99,91,255,0.2);
-    }
-    .pricing-amount {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .pricing-amount span {
-      font-family: var(--font-sans);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1;
+    .section h2 {
+      font-size: clamp(2rem, 3.4vw, 3.4rem);
       margin-bottom: 0.8rem;
     }
-    .pricing-amount .price-num {
-      font-family: var(--font-serif);
-      font-size: 5.5rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-      letter-spacing: -0.04em;
+
+    .section-intro p {
+      font-size: 1.06rem;
+      max-width: 58ch;
     }
-    .pricing-once {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 2rem;
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
     }
-    .pricing-list {
+
+    .workflow-card {
+      border-radius: 24px;
+      padding: 1.7rem;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .workflow-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .workflow-card ol,
+    .workflow-card ul {
       list-style: none;
-      margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
     }
-    .pricing-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.98rem;
-      color: var(--text);
+
+    .workflow-card li {
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(246, 249, 252, 0.85);
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 600;
     }
-    .pricing-list li svg { color: var(--brand); flex-shrink: 0; }
-    .pricing-cta {
-      display: flex;
+
+    .workflow-card li span {
+      color: var(--muted);
+      font-weight: 700;
+      margin-right: 0.45rem;
+    }
+
+    .workflow-card.bad { background: rgba(254, 226, 226, 0.45); }
+    .workflow-card.good { background: rgba(240, 239, 255, 0.72); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.4rem;
+    }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      width: 100%;
-      background: linear-gradient(135deg, var(--brand), #7C3AED);
-      color: #fff;
-      font-family: var(--font-sans);
+      margin-bottom: 0.9rem;
+      background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft));
       font-size: 1.05rem;
-      font-weight: 600;
-      padding: 1rem 2rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 8px 20px rgba(99,91,255,0.35);
-      transition: all 0.2s ease;
-      margin-bottom: 1.25rem;
-    }
-    .pricing-cta:hover {
-      background: linear-gradient(135deg, var(--brand-hover), #6D28D9);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(99,91,255,0.45);
-    }
-    .pricing-trust {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      text-align: center;
     }
 
-    /* ===========================
-       CTA FOOTER
-    =========================== */
-    .cta-section {
-      padding: 7rem 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .cta-section .section-h2 { font-size: clamp(2rem,4vw,3rem); max-width: 700px; margin: 0 auto 1rem; }
-    .cta-section .section-sub { margin: 0 auto 2.5rem; max-width: 460px; }
-    .cta-footnote {
-      margin-top: 1.25rem;
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-weight: 500;
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.45rem;
     }
 
-    /* ===========================
-       FOOTER
-    =========================== */
-    .footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
-    .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
+    .feature-card p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .route-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.5rem;
+    }
+
+    .route-card h3 {
+      font-size: 1.28rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .route-card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .route-card a {
+      color: var(--accent-strong);
+      font-weight: 800;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.2rem;
+    }
+
+    .fit-card,
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fit-card h3,
+    .pricing-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .fit-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .fit-list li {
       display: flex;
-      align-items: center;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.9rem 0;
+      border-top: 1px solid rgba(227, 232, 238, 0.72);
+    }
+
+    .fit-list li:first-child { border-top: 0; }
+
+    .fit-list b {
+      min-width: 1.6rem;
+      color: var(--accent-strong);
+    }
+
+    .fit-list span {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .fit-list p {
+      margin-top: 0.15rem;
+      font-size: 0.92rem;
+    }
+
+    .pricing-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 252, 0.96));
+    }
+
+    .price {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.2rem;
+      margin: 1rem 0 0.35rem;
+    }
+
+    .price small {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .price strong {
+      font-family: var(--font-serif);
+      font-size: 4.8rem;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .pricing-note {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      margin: 1.15rem 0 1.45rem;
+    }
+
+    .pricing-list li {
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(240, 239, 255, 0.46);
+      font-size: 0.94rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid rgba(227, 232, 238, 0.72);
+    }
+
+    .footer-inner {
+      display: flex;
       justify-content: space-between;
       gap: 1.5rem;
+      align-items: flex-start;
       flex-wrap: wrap;
     }
-    .footer-logo {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text);
-    }
-    .footer-logo svg { color: var(--brand); }
-    .footer-tagline { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; }
-    .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
-    .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 0.82rem; color: var(--text-dim); }
 
-    /* ===========================
-       RESPONSIVE
-    =========================== */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-actions { align-items: center; }
-      .hero-sub { margin: 0 auto 2.5rem; }
-      .hero-mockup-col { display: none; }
-      .problem-compare { grid-template-columns: 1fr; }
-      .vs-divider { display: none; }
-      .how-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .for-grid { grid-template-columns: 1fr; }
-      .problems-grid { grid-template-columns: 1fr; }
+    .footer-copy p {
+      font-size: 0.92rem;
+      max-width: 42ch;
     }
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .nav-links > a:not(.nav-cta) { display: none; }
-      .pricing-card { padding: 2.5rem 1.75rem; }
-      .pricing-amount .price-num { font-size: 4.5rem; }
-      .hero { padding: 5rem 1.25rem 3rem; }
+
+    .footer-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 980px) {
+      .hero-shell,
+      .fit-grid,
+      .split-panel { grid-template-columns: 1fr; }
+
+      .proof-panel,
+      .route-grid,
+      .feature-grid { grid-template-columns: 1fr; }
+
+      .floating-stats {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links a:not(.nav-buy) { display: none; }
+      .hero { padding: 3.2rem 0 2.5rem; }
+      .hero h1 { max-width: 12ch; }
+      .hero-note { grid-template-columns: 1fr; }
+      .proof-panel { padding: 1rem; }
+      .section { padding: 4rem 0; }
+      .price strong { font-size: 4rem; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ============================
-       NAV
-  ============================= -->
   <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
-        Thooval
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+            <line x1="16" y1="8" x2="2" y2="22"></line>
+            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+          </svg>
+        </span>
+        <span>Thooval</span>
       </a>
       <div class="nav-links">
-        <a href="#problem">The Problem</a>
+        <a href="#why">Why it exists</a>
         <a href="#features">Features</a>
-        <a href="#pricing">Open Source</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="https://github.com/akhilkurisinkal/thooval-releases" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
-        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="nav-cta" id="nav-download-btn">Download Free ↓</a>
+        <a href="#fit">Who it's for</a>
+        <a href="blog/index.html">Guides</a>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary nav-buy">Buy for $15</a>
       </div>
     </div>
   </nav>
 
-  <!-- ============================
-       HERO
-  ============================= -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text reveal">
-        <div class="hero-eyebrow"><span style="display:inline-block;background:var(--brand-light);color:var(--brand);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.25rem 0.8rem;border-radius:99px;border:1px solid rgba(99,91,255,0.2);">100% Free & Open Source</span></div>
-        <h1 class="hero-h1">The macOS Markdown Editor<br>That Publishes Directly to<br><em>GitHub Pages.</em></h1>
-        <p class="hero-sub">
-          Write in a live-formatted editor. Push to your blog with one click. <strong>No terminal. No pipelines. No monthly fee — ever.</strong> Thooval connects to your GitHub repo via a Personal Access Token. Your drafts stay on your Mac. Your blog lives on GitHub Pages — fast, free, and fully yours.
-        </p>
-        <div class="hero-actions">
-          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary" id="hero-download-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download for macOS
-          </a>
-          <p class="hero-trust">macOS 12+ &nbsp;·&nbsp; MIT Licensed &nbsp;·&nbsp; Transparent &amp; Auditable</p>
-          <div style="display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:0.25rem;">
-            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ No CI/CD setup</span>
-            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ Drafts stay local</span>
-            <span style="font-size:0.82rem;color:var(--green);font-weight:600;">✓ Built-in Giscus &amp; GA4</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-mockup-col reveal delay-2">
-        <div class="hero-terminal">
-          <div class="terminal-bar">
-            <div class="t-dot red"></div>
-            <div class="t-dot amber"></div>
-            <div class="t-dot green"></div>
-          </div>
-          <div class="terminal-lines">
-            <div class="tl-dim">── Thooval ─────────────────</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-text">📝 &nbsp;"Shipping my side project"</div>
-            <div class="tl-dim">&nbsp;&nbsp;&nbsp;<span class="tl-muted">draft.md</span> &nbsp;·&nbsp; 847 words</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-dim">── Editor ──────────────────</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-text">&nbsp;&nbsp;# Shipping my side project</div>
-            <div class="tl-muted">&nbsp;&nbsp;It started with a weekend…</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-dim">────────────────────────────</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-accent">▶  <span class="tl-text">[ Publish ]</span> &nbsp; ← click once</div>
-            <div class="tl-muted">&nbsp;</div>
-            <div class="tl-green">✓ &nbsp;Live on GitHub Pages</div>
-            <div class="tl-muted">&nbsp;&nbsp;&nbsp;username.github.io/blog<span class="cursor"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       THE PROBLEM
-  ============================= -->
-  <section class="section section-alt" id="problem">
-    <div class="container">
-      <div class="problem-intro reveal">
-        <div class="section-label">The Problem</div>
-        <h2 class="section-h2">You just want to write.</h2>
-        <p class="section-sub">Instead, you're forced to choose between renting space on platforms that lock in your audience, paying $100+/year for a Ghost subscription, or spending your weekend fighting Markdown CLI generators just to host for free.</p>
-      </div>
-
-      <div class="problems-grid reveal delay-1">
-        <div class="problem-item">
-          <span class="problem-x">✕</span>
-          <div>
-            <h4>Garbled static site generators</h4>
-            <p>Hugo and Jekyll produce garbage codebases you inherit forever. One wrong template variable and your whole build breaks.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <span class="problem-x">✕</span>
-          <div>
-            <h4>Substack &amp; Medium: rented space</h4>
-            <p>You're building on someone else's platform. They change the algorithm. They add a paywall. Your audience isn't yours.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <span class="problem-x">✕</span>
-          <div>
-            <h4>Monthly subscriptions &amp; hosting bills</h4>
-            <p>Ghost starts at $9/month. WordPress hosting adds up. You're paying $100+/year to host 12 blog posts.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <span class="problem-x">✕</span>
-          <div>
-            <h4>Editors that show raw <code>**markdown**</code></h4>
-            <p>Most CLI-based workflows force you to write in a terminal editor and mentally parse raw syntax. Typora proved there's a better way.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: 4rem;">
-        <div class="reveal" style="text-align:center; margin-bottom: 2rem;">
-          <div class="section-label" style="justify-content:center;"><span style="display:none"></span>The workflow difference</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text);">7 steps vs. 2 steps.</h3>
-        </div>
-        <div class="problem-compare reveal delay-1">
-          <div>
-            <div class="problem-col-head col-head-bad">The old way</div>
-            <div class="step-list">
-              <div class="step-item bad"><span class="step-num">1</span> Write your post</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">2</span> Run the build command</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">3</span> Fix the build error</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">4</span> Commit your changes</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">5</span> <code>git push</code> to remote</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">6</span> Wait for CI to deploy</div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item bad"><span class="step-num">7</span> Verify it actually deployed</div>
-            </div>
-          </div>
-          <div class="vs-divider">
-            <div class="vs-line"></div>
-            <div class="vs-badge">vs</div>
-            <div class="vs-line"></div>
-          </div>
-          <div>
-            <div class="problem-col-head col-head-good">With Thooval</div>
-            <div class="step-list">
-              <div class="step-item good">
-                <svg class="step-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Write your post
-              </div>
-              <div class="step-arrow">↓</div>
-              <div class="step-item good final">
-                <svg class="step-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Click <strong>Publish</strong> — Blog is live ✓
-              </div>
-            </div>
-            <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 1.25rem; letter-spacing: 0.04em;">That's it. Really.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       HOW IT WORKS
-  ============================= -->
-  <section class="section" id="how">
-    <div class="container">
-      <div class="reveal" style="margin-bottom: 3rem;">
-        <div class="section-label">How it works</div>
-        <h2 class="section-h2">Set up once.<br>Publish forever.</h2>
-        <p class="section-sub">One-time GitHub setup, then it's a single click every time. No CLI, no CI pipelines, no config files.</p>
-      </div>
-      <div class="how-grid reveal delay-1">
-        <div class="how-step">
-          <div class="how-num-icon">01</div>
-          <h3>Create a GitHub repo</h3>
-          <p>Make a new repository for your blog on GitHub. Enable Pages. Takes two minutes. You only do this once.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num-icon">02</div>
-          <h3>Paste your access token</h3>
-          <p>Generate a GitHub personal access token and paste it into Thooval. That's the only "technical" step. You control the token.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num-icon">03</div>
-          <h3>Click <code>Publish</code> every time</h3>
-          <p>Write in the WYSIWYG editor. Hit Publish. Thooval builds clean static HTML and pushes it to <strong>GitHub Pages</strong> — your <strong>free hosting</strong> — automatically.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       FEATURES
-  ============================= -->
-  <section class="section section-alt" id="features">
-    <div class="container">
-      <div class="features-intro reveal">
-        <div class="section-label">Key Features</div>
-        <h2 class="section-h2">A real editor.<br><em>Actual ownership.</em></h2>
-        <p class="section-sub">Thooval is built around a Typora-style WYSIWYG editor with one-click GitHub Pages deployment. Everything else follows from that.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feat-card reveal">
-          <div class="feat-tag">Core</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3>WYSIWYG editor — like Typora</h3>
-          <p>Write and see your post formatted as you type. Bold is bold. Headings look like headings. No raw <code>**markdown**</code> syntax cluttering your view.</p>
-        </div>
-        <div class="feat-card reveal delay-1">
-          <div class="feat-tag">Core</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </div>
-          <h3>One-click GitHub Pages deploy</h3>
-          <p>Hit Publish. Thooval generates clean HTML and pushes it directly to your <strong>GitHub Pages</strong> repo. Your blog is live — for free — in seconds.</p>
-        </div>
-        <div class="feat-card reveal delay-2">
-          <div class="feat-tag">Ownership</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <h3>Local-first — <code>.md</code> files on your Mac</h3>
-          <p>Every post is a plain <code>.md</code> file on your disk. No cloud storage, no Thooval account. Open them in any editor. They're yours unconditionally.</p>
-        </div>
-        <div class="feat-card reveal">
-          <div class="feat-tag">Privacy</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-          </div>
-          <h3>No account required</h3>
-          <p>Download, install, start writing. No sign-up email, no password, no profile. You don't need an account with Thooval — ever.</p>
-        </div>
-        <div class="feat-card reveal delay-1">
-          <div class="feat-tag">Analytics</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <h3>Google Analytics built-in</h3>
-          <p>Paste your GA4 measurement ID once. Thooval embeds the tracking tag in every page automatically. See who's reading — no plugins needed.</p>
-        </div>
-        <div class="feat-card reveal delay-2">
-          <div class="feat-tag">Comments</div>
-          <div class="feat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3>Giscus comments via GitHub Discussions</h3>
-          <p>Enable reader comments powered by GitHub Discussions. No spam bots, no third-party tracking. Readers authenticate with GitHub.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       WHO IT'S FOR
-  ============================= -->
-  <section class="section" id="who">
-    <div class="container">
-      <div class="reveal">
-        <div class="section-label">Who it's for</div>
-        <h2 class="section-h2">Built for people who<br>own their tools.</h2>
-        <p class="section-sub">Not for everyone. Deliberately for the people who know exactly what they want — and what they don't.</p>
-      </div>
-      <div class="for-grid">
-        <div class="for-card reveal delay-1">
-          <div class="for-label">Developers</div>
-          <blockquote>"I know Git. I just don't want a weekend-long setup."</blockquote>
-          <p>You want a personal blog without the overhead of Hugo templating, broken CI pipelines, or maintaining a VPS. You understand GitHub. Thooval does the rest.</p>
-        </div>
-        <div class="for-card reveal delay-2">
-          <div class="for-label">Indie Hackers</div>
-          <blockquote>"I'm building in public. I'd rather write than configure."</blockquote>
-          <p>You're shipping something and want to document it. You want readers to find you, not Substack's algorithm. Your blog should be yours — not rented space.</p>
-        </div>
-        <div class="for-card reveal delay-3">
-          <div class="for-label">File-first thinkers</div>
-          <blockquote>"Every platform I trusted eventually let me down."</blockquote>
-          <p>You've been burned. Medium introduced paywalls. Substack pivoted. WordPress needed constant security updates. Your writing lives on your Mac — not on someone else's server.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       OPEN SOURCE
-  ============================= -->
-  <section class="section section-alt" id="pricing">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;" class="reveal">
-        <div class="section-label" style="justify-content:center;"><span></span>Open Source</div>
-        <h2 class="section-h2" style="margin-bottom:0.5rem;">Free software.<br>Forever.</h2>
-        <p class="section-sub" style="margin: 0.75rem auto 0;">No subscriptions. No paywalls. No surprises. Just software built for the community.</p>
-      </div>
-      <div class="pricing-wrap reveal delay-1">
-        <div class="pricing-card">
-          <div class="pricing-amount"><span>$</span><span class="price-num">0</span></div>
-          <div class="pricing-once">MIT Licensed &nbsp;·&nbsp; Available on GitHub</div>
-          <ul class="pricing-list">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              100% Free and Open Source software
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              All future updates included automatically
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Free blog hosting on GitHub Pages
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Local-first — data never leaves your Mac
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              No monthly paywalls, ever
-            </li>
-          </ul>
-          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="pricing-cta" id="pricing-trial-btn" style="background:var(--brand);box-shadow:0 8px 20px rgba(99,91,255,0.35);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download for macOS
-          </a>
-          <a href="https://github.com/akhilkurisinkal/thooval-releases" id="pricing-buy-btn" target="_blank" style="display:block;text-align:center;font-size:0.88rem;color:var(--text-muted);font-weight:500;margin-top:0.5rem;">View Source Code on GitHub →</a>
-          <p class="pricing-trust" style="margin-top:0.75rem;">Support the project by leaving a star on GitHub</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================
-       CTA FOOTER
-  ============================= -->
-  <section class="cta-section reveal">
-    <div class="container">
-      <div class="section-label">Zero risk. 100% Free.</div>
-      <h2 class="section-h2">Your GitHub Pages blog,<br><em>live in under 10 minutes.</em></h2>
-      <p class="section-sub">No hosting setup. No terminal. No subscriptions — ever. Download Thooval, connect GitHub once, and publish your first post today.</p>
-      <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="btn-primary" style="display:inline-flex;" id="cta-download-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download for macOS
-      </a>
-      <p class="cta-footnote">macOS 12+ &nbsp;·&nbsp; MIT Licensed &nbsp;·&nbsp; Free and Open Source</p>
-    </div>
-  </section>
-
-  <!-- ============================
-       FOOTER
-  ============================= -->
-  <footer class="footer">
-    <div class="footer-inner">
+  <header class="hero">
+    <div class="container hero-shell">
       <div>
-        <div class="footer-logo">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
-          Thooval
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Built for GitHub Pages on macOS
         </div>
-        <p class="footer-tagline">macOS Markdown editor for GitHub Pages &nbsp;·&nbsp; Made in God's Own Country</p>
+        <h1>A better way to write and publish your blog.</h1>
+        <p class="hero-copy">Thooval gives you a Typora-like Markdown editor with a real publish button. Write locally, keep your posts as plain <code>.md</code> files, and push straight to GitHub Pages without Jekyll, CI pipelines, or CMS overhead.</p>
+        <div class="hero-actions">
+          <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary">Buy and download</a>
+          <a href="alternatives/typora-alternative/index.html" class="cta cta-secondary">See the Typora comparison</a>
+        </div>
+        <div class="hero-meta">
+          <span>macOS 12+</span>
+          <span>$15 one-time</span>
+          <span>GitHub Pages hosting stays free</span>
+        </div>
+        <div class="hero-note">
+          <div class="mini-card">
+            <strong>Looks like a writing app</strong>
+            <p>Live WYSIWYG Markdown, local drafts, calm interface, no browser tab chaos.</p>
+          </div>
+          <div class="mini-card">
+            <strong>Behaves like a publishing tool</strong>
+            <p>Connect GitHub once, then write and publish from the same place.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="visual-top">
+            <div class="window-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="screenshot">
+            <img src="assets/thooval_editor_mockup.png" alt="Thooval editor screenshot">
+          </div>
+        </div>
+        <div class="floating-stats">
+          <strong>The core promise is simple.</strong>
+          <p>Great writing apps usually stop at the draft. Great publishing stacks usually feel like infrastructure. Thooval sits in the middle.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proof-strip">
+    <div class="container proof-panel">
+      <div class="proof-item">
+        <div><b>Own your files</b><p>Every post stays as plain Markdown on your Mac.</p></div>
+      </div>
+      <div class="proof-item">
+        <div><b>Own your site</b><p>Your published blog lives on GitHub Pages, not inside someone else's platform.</p></div>
+      </div>
+      <div class="proof-item">
+        <div><b>Keep the stack small</b><p>No Ruby setup, no build pipeline babysitting, no monthly hosting tool bill.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-kicker">Why it exists</div>
+        <h2>The gap is not writing. The gap is getting from draft to live post.</h2>
+        <p>Typora, iA Writer, and Obsidian are great places to write. Jekyll, Ghost, and WordPress are ways to publish. The awkward part is having to stitch those worlds together every time you want to ship a post.</p>
+      </div>
+      <div class="split-panel">
+        <div class="workflow-card bad">
+          <h3>What the old workflow feels like</h3>
+          <ol>
+            <li><span>1.</span> Write in one app.</li>
+            <li><span>2.</span> Export or move files around.</li>
+            <li><span>3.</span> Open a generator, terminal, or CMS.</li>
+            <li><span>4.</span> Fix the part that broke this time.</li>
+            <li><span>5.</span> Push and wait to see if the site updates.</li>
+          </ol>
+        </div>
+        <div class="workflow-card good">
+          <h3>What Thooval is trying to make normal</h3>
+          <ul>
+            <li><span>1.</span> Open the editor.</li>
+            <li><span>2.</span> Write the post.</li>
+            <li><span>3.</span> Click Publish.</li>
+            <li><span>4.</span> Go back to writing the next thing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-kicker">What you get</div>
+        <h2>A focused toolchain for a very specific kind of blog.</h2>
+        <p>Thooval is not trying to be a note-taking app, a visual website builder, or a giant publishing platform. It is a Mac app for people who want a straightforward GitHub Pages blog.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">A</div>
+          <h3>Typora-like writing feel</h3>
+          <p>Live WYSIWYG Markdown so the writing experience feels clean, direct, and less like editing source code.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">B</div>
+          <h3>One-click GitHub Pages publish</h3>
+          <p>Generate and push the site from the app instead of wiring together a separate terminal workflow.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">C</div>
+          <h3>Local-first file ownership</h3>
+          <p>Your posts remain plain <code>.md</code> files in folders you control, which means no lock-in to a hosted database.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">D</div>
+          <h3>Built-in blog extras</h3>
+          <p>Google Analytics and Giscus support are part of the product so you do not need a plugin maze for basics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-kicker">Start here</div>
+        <h2>Pick the path that matches how you think about the problem.</h2>
+        <p>If you are comparing editors, looking for a GitHub Pages workflow, or just trying to understand whether this is a fit, these are the best entry points.</p>
+      </div>
+      <div class="route-grid">
+        <article class="route-card">
+          <h3>I want the GitHub Pages workflow</h3>
+          <p>Start with the product page that shows the setup model and the publishing flow.</p>
+          <a href="use-cases/github-pages-blog/index.html">Open the GitHub Pages use case</a>
+        </article>
+        <article class="route-card">
+          <h3>I am comparing against Typora</h3>
+          <p>Start with the most natural alternative page if you already love the writing experience and want a publish path.</p>
+          <a href="alternatives/typora-alternative/index.html">Read the Typora comparison</a>
+        </article>
+        <article class="route-card">
+          <h3>I want practical guides first</h3>
+          <p>Start with the setup and comparison guides if you want to evaluate the stack before buying anything.</p>
+          <a href="blog/index.html">Browse the guides</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fit">
+    <div class="container fit-grid">
+      <div class="fit-card">
+        <div class="section-kicker">Best fit</div>
+        <h3>Who Thooval is really for</h3>
+        <ul class="fit-list">
+          <li>
+            <b>01</b>
+            <div>
+              <span>Mac users who want a personal site on GitHub Pages</span>
+              <p>You already like the idea of a repo-backed blog and want the easiest path to maintain it.</p>
+            </div>
+          </li>
+          <li>
+            <b>02</b>
+            <div>
+              <span>People who care about the writing experience</span>
+              <p>You do not want to draft in a clunky CMS editor just to get a post online.</p>
+            </div>
+          </li>
+          <li>
+            <b>03</b>
+            <div>
+              <span>Developers, indie hackers, and technical writers</span>
+              <p>You want a small, durable workflow that keeps ownership of both files and published site.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="pricing-card" id="pricing">
+        <div class="section-kicker">Pricing</div>
+        <h3>One purchase. No recurring software bill.</h3>
+        <div class="price">
+          <small>$</small>
+          <strong>15</strong>
+        </div>
+        <p class="pricing-note">GitHub Pages hosting remains free. Thooval is the app layer, not another monthly platform.</p>
+        <ul class="pricing-list">
+          <li>Live Markdown editor</li>
+          <li>GitHub Pages publishing</li>
+          <li>Local file ownership</li>
+          <li>All future updates included</li>
+        </ul>
+        <a href="https://github.com/akhilkurisinkal/thooval-releases/releases/download/v.1.0.0/Thooval_1.0.0_universal.dmg" class="cta cta-primary" style="width: 100%;">Buy and download</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <a class="brand" href="index.html" style="margin-bottom: 0.8rem;">
+          <span class="brand-mark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              <line x1="16" y1="8" x2="2" y2="22"></line>
+              <line x1="17.5" y1="15" x2="9" y2="15"></line>
+            </svg>
+          </span>
+          <span>Thooval</span>
+        </a>
+        <p>A calmer publishing workflow for Mac users who want a GitHub Pages blog without the usual setup baggage.</p>
       </div>
       <div class="footer-links">
-        <a href="blog/index.html">Blog</a>
+        <a href="blog/index.html">Guides</a>
         <a href="alternatives/index.html">Alternatives</a>
-        <a href="#pricing">Pricing</a>
         <a href="help.html">Help</a>
         <a href="terms.html">Terms</a>
-        <a href="refund.html">Refund Policy</a>
+        <a href="refund.html">Refunds</a>
         <a href="mailto:support@thooval.ink?subject=Thooval%20Support">Contact</a>
       </div>
-      <p class="footer-copy">© 2026 Thooval</p>
     </div>
   </footer>
-
-  <script>
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => io.observe(el));
-
-    // Sticky nav shadow on scroll
-    const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', () => {
-      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 24px rgba(0,0,0,0.4)' : 'none';
-    }, { passive: true });
-  </script>
-
 </body>
 </html>
